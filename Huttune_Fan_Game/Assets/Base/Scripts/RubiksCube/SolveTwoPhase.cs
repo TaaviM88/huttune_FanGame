@@ -44,7 +44,7 @@ public class SolveTwoPhase : MonoBehaviour
 
         //automate the list
         Automate.moveList = solutionList;
-        print(info);
+        //print(info);
     }
 
 

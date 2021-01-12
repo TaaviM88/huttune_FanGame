@@ -18,6 +18,8 @@ public class ReadRubiksCube : MonoBehaviour
     private List<GameObject> leftRays = new List<GameObject>();
     private List<GameObject> rightRays = new List<GameObject>();
 
+    private List<GameObject> frontFaces = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +39,8 @@ public class ReadRubiksCube : MonoBehaviour
 
     public void ReadState()
     {
-        cubeState =  FindObjectOfType<RubiksCubeState>();
-        cubeMap = FindObjectOfType<CubeMap>();
+        //cubeState =  FindObjectOfType<RubiksCubeState>();
+        //cubeMap = FindObjectOfType<CubeMap>();
         cubeState.up = ReadFace(upRays, tUp);
         cubeState.down = ReadFace(downRays, tDown);
         cubeState.left = ReadFace(leftRays, tLeft);
@@ -48,6 +50,8 @@ public class ReadRubiksCube : MonoBehaviour
 
         //update the map with found positions
         cubeMap.Set();
+        //Check if cube is solved
+        cubeMap.IsSolved();
     }
 
     void SetRayTransforms()
@@ -93,7 +97,7 @@ public class ReadRubiksCube : MonoBehaviour
     public List<GameObject> ReadFace(List<GameObject> rayStarts, Transform rayTransform)
     {
         List<GameObject> facesHit = new List<GameObject>();
-        
+        frontFaces.Clear();
 
         foreach (GameObject rayStart in rayStarts)
         {
@@ -105,7 +109,9 @@ public class ReadRubiksCube : MonoBehaviour
             {
                 Debug.DrawRay(ray, rayTransform.forward * hit.distance, Color.yellow);
                 facesHit.Add(hit.collider.gameObject);
-                //print(hit.collider.gameObject.name);
+                //save faces to list
+                frontFaces.Add(hit.collider.gameObject);
+                //print(hit.collider.gameObject.tag);
             }
             else
             {
@@ -113,7 +119,19 @@ public class ReadRubiksCube : MonoBehaviour
             }
         }
 
+        CheckIfSpecialFacesAreNear();
         return  facesHit;
 
+    }
+
+    public void CheckIfSpecialFacesAreNear()
+    {
+        for (int i = 0; i < frontFaces.Count; i++)
+        {
+           if( frontFaces[3].tag  == "SpecialFace" )
+            {
+                print(i + "Vitun spessu jöpö palikka löydetty");
+            }
+        }
     }
 }
