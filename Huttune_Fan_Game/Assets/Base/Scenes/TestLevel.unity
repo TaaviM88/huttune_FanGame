@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -626,10 +626,30 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2738907659505136180, guid: 9cd84dbc7c72556458318e09df51bf95,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738907659505136180, guid: 9cd84dbc7c72556458318e09df51bf95,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738907659505136180, guid: 9cd84dbc7c72556458318e09df51bf95,
+        type: 3}
+      propertyPath: m_RendererIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2738907659505136181, guid: 9cd84dbc7c72556458318e09df51bf95,
         type: 3}
       propertyPath: mouseSensivity
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738907659505136183, guid: 9cd84dbc7c72556458318e09df51bf95,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.163
       objectReference: {fileID: 0}
     - target: {fileID: 2738907659505136187, guid: 9cd84dbc7c72556458318e09df51bf95,
         type: 3}
@@ -3606,6 +3626,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1888696485}
   - component: {fileID: 1888696484}
+  - component: {fileID: 1888696488}
+  - component: {fileID: 1888696487}
+  - component: {fileID: 1888696486}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -3644,6 +3667,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1888696486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888696483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31898a7a07ac44b2ac17a1ef9d941fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+  isEnabled: 1
+  patternIndex: 2
+  ditherThreshold: 10
+  ditherStrength: 1
+  ditherScale: 2
+--- !u!114 &1888696487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888696483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2e3e8bcd344ecc83c390aac75b2c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+  isEnabled: 1
+  widthPixelation: 840
+  heightPixelation: 480
+  colorPrecision: 16
+--- !u!114 &1888696488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888696483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60add0cab76d469cbdad4b80314cb093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
+  isEnabled: 1
+  fogDensity: 9.48
+  fogDistance: 2.9
+  fogNear: 0
+  fogFar: 81.3
+  fogAltScale: 10
+  fogThinning: 458
+  noiseScale: 843
+  noiseStrength: 0.029
+  fogColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1944077595
 GameObject:
   m_ObjectHideFlags: 0
