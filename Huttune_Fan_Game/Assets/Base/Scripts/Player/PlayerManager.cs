@@ -7,9 +7,10 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     public Camera playerCamera { get; set; }
 
+    public PlayerEnumManager enumManager { get; set; }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         foreach(Transform eachChild in transform)
         {
@@ -19,6 +20,8 @@ public class PlayerManager : MonoBehaviour
                 break;
             }
         }
+
+        enumManager = GetComponent<PlayerEnumManager>();
     }
 
     // Update is called once per frame
