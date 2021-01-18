@@ -76,7 +76,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   widthPixelation:
     m_OverrideState: 1
-    m_Value: 840
+    m_Value: 640
   heightPixelation:
     m_OverrideState: 1
     m_Value: 480
