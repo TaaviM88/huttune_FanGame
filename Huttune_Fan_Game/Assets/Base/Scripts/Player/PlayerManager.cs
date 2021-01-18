@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
 
     public PlayerEnumManager enumManager { get; set; }
 
+    public LayerMask all;
+    public LayerMask normal;
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,11 +24,22 @@ public class PlayerManager : MonoBehaviour
         }
 
         enumManager = GetComponent<PlayerEnumManager>();
+        playerCamera.cullingMask = normal;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetButtonDown("Fire1"))
+        {
+            playerCamera.cullingMask = all;
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            playerCamera.cullingMask = normal;
+        }
+
+
     }
 }
