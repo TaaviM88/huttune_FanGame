@@ -82,7 +82,7 @@ MonoBehaviour:
     m_Value: 480
   colorPrecision:
     m_OverrideState: 1
-    m_Value: 16
+    m_Value: 64
 --- !u!114 &8904118097657293907
 MonoBehaviour:
   m_ObjectHideFlags: 3
