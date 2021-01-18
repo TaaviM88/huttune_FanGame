@@ -18,7 +18,8 @@ public class CameraTrigger : MonoBehaviour
         if(other.tag == "Player")
         {
             cameraToSwitch.enabled = true;
-            //other.gameObject.GetComponent<PlayerManager>().playerCamera.enabled = false;
+            // other.gameObject.GetComponent<PlayerManager>().gameObject.SetActive(false);
+            other.gameObject.GetComponent<PlayerManager>().playerCamera.gameObject.SetActive(false);
         }
     }
 
@@ -27,7 +28,8 @@ public class CameraTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             cameraToSwitch.enabled = false;
-            //other.gameObject.GetComponent<PlayerManager>().playerCamera.enabled = true;
+            //other.gameObject.GetComponent<PlayerManager>().gameObject.SetActive(true);
+            other.gameObject.GetComponent<PlayerManager>().playerCamera.gameObject.SetActive (true);
         }
     }
 }

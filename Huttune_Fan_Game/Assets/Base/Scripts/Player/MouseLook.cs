@@ -16,6 +16,8 @@ public class MouseLook : MonoBehaviour
     public float mouseY;
 
     private float xRotation = 0f;
+
+    public bool disableCameraRotation { get; set; }
     // Start is called before the first frame update
     void Start()
     {
