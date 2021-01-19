@@ -130,7 +130,7 @@ public class ReadRubiksCube : MonoBehaviour
         {
            if( frontFaces[3].tag  == "SpecialFace" )
             {
-                print(i + "Vitun spessu jöpö palikka löydetty");
+                //print(i + "Vitun spessu jöpö palikka löydetty");
             }
         }
     }
