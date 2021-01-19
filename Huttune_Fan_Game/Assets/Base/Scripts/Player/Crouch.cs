@@ -30,6 +30,10 @@ public class Crouch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!manager.canMove)
+        {
+            return;
+        }
         if(Input.GetButtonDown("Fire2"))
         {
             //Kyykkyyn

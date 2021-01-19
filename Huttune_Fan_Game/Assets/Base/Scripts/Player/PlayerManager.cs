@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
 
     public LayerMask all;
     public LayerMask normal;
+
+    public bool canMove { get; set; }
     // Start is called before the first frame update
     void Awake()
     {
@@ -24,22 +26,41 @@ public class PlayerManager : MonoBehaviour
         }
 
         enumManager = GetComponent<PlayerEnumManager>();
-        playerCamera.cullingMask = normal;
+        
+        TurnOffGhostVision();
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire3"))
         {
-            playerCamera.cullingMask = all;
+            ToggleMovement();
         }
 
-        if (Input.GetButtonUp("Fire1"))
-        {
-            playerCamera.cullingMask = normal;
-        }
+        //if(Input.GetButtonDown("Fire1"))
+        //{
+        //    TurnOnGhostVision();
+        //}
 
+        //if (Input.GetButtonUp("Fire1"))
+        //{
+        //    TurnOffGhostVision();
+        //}
+    }
+    public void TurnOnGhostVision()
+    {
+        playerCamera.cullingMask = all;
+    }
 
+    public void TurnOffGhostVision()
+    {
+        playerCamera.cullingMask = normal;
+    }
+    
+    public void ToggleMovement()
+    {
+        canMove = canMove ? false : true;
     }
 }

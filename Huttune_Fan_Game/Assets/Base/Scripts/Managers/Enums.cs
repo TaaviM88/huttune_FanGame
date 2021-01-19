@@ -17,7 +17,8 @@ public enum PlayerActionState
     nothing,
     puzzle,
     reading,
-    peeping
+    peeping,
+    inspecting
 }
 #endregion
 

@@ -18,16 +18,24 @@ public class MouseLook : MonoBehaviour
     private float xRotation = 0f;
 
     public bool disableCameraRotation { get; set; }
+
+    PlayerManager manager;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         playerBody = gameObject.transform.parent;
+        manager = GetComponentInParent<PlayerManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!manager.canMove)
+        {
+            return;
+        }
+
         mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
         mouseY = Input.GetAxis("Mouse Y") * mouseSensivity * Time.deltaTime;
 

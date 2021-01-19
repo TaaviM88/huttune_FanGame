@@ -18,14 +18,20 @@ public class PostProcessingActivate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
-        {
-            colorAdjustments.active = true;
-        }
-        if (Input.GetButtonUp("Fire1"))
-        {
-            colorAdjustments.active = false;
-        }
+       //if(Input.GetButtonDown("Fire1"))
+       // {
+       //     //colorAdjustments.active = true;
+       //     ToggleColorAdjustment();
+       // }
+        //if (Input.GetButtonUp("Fire1"))
+        //{
+        //    colorAdjustments.active = false;
+        //}
 
+    }
+
+    public void ToggleColorAdjustment()
+    {
+        colorAdjustments.active = colorAdjustments.active ? false : true;
     }
 }
