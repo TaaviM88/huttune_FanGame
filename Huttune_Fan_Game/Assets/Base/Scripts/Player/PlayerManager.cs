@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     public LayerMask normal;
 
     public bool canMove { get; set; }
+    public bool isHoldingItem { get; set;}
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,10 +35,10 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire3"))
-        {
-            ToggleMovement();
-        }
+        //if(Input.GetButtonDown("Fire3"))
+        //{
+        //    ToggleMovement();
+        //}
 
         //if(Input.GetButtonDown("Fire1"))
         //{

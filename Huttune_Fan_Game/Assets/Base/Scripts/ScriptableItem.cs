@@ -4,8 +4,9 @@ public class ScriptableItem : ScriptableObject
 {
     public Sprite icon = null;
     public string objName = "";
+    public string description = "";
     public GameObject prefab = null;
-
+    
 
     public void RemoveFromInventory()
     {

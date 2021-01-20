@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public List<ScriptableItem> items = new List<ScriptableItem>();
+    private int currentItemListIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -37,4 +38,31 @@ public class PlayerInventory : MonoBehaviour
 
         return items[0];
     }
+
+    public ScriptableItem GetNextItem(int i)
+    {
+        if(items.Count == 0)
+        {
+            return null;
+        }
+        currentItemListIndex += i;
+        //jos meinataan mennä yli niin palautetaan ensimmäinen
+      if (items.Count >= currentItemListIndex-1)
+      {
+            currentItemListIndex = 0;
+        return items[0];
+      }
+      //jos meinaa mennä miinuksen puolelle palautetaan listan viimeinen
+      else if(currentItemListIndex < 0)
+        {
+            return items[items.Count - 1];
+        }
+      //kaikissa muissa tapauksissa palautetaan ideksin kohdalta item
+        else
+        {
+            return items[currentItemListIndex];
+        }
+    }
+
+    
 }

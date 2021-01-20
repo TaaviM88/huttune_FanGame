@@ -15,11 +15,13 @@ public class PlayerRaycaster : MonoBehaviour
     Camera FPSCamera;
     PlayerManager manager;
     PlayerInventory inventory;
+    ItemInspect inspect;
     // Start is called before the first frame update
     void Start()
     {
         manager = GetComponent<PlayerManager>();
         inventory = GetComponent<PlayerInventory>();
+        inspect = GetComponent<ItemInspect>();
         FPSCamera = manager.playerCamera;
 
     }
@@ -58,14 +60,22 @@ public class PlayerRaycaster : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range))
         {
+            //Jos osutaan itemiin niin poimitaan se ja lopetetaan raycast
             Item item = hit.collider.gameObject.GetComponent<Item>();
-            if (item == null)
+            if (item != null)
             {
+
+                inventory.AddItem(item.scriptableItem);
+                item.PickUpItem();
                 return;
             }
 
-            inventory.AddItem(item.scriptableItem);
-            item.PickUpItem();
+            //jos osuttiin objektiin jossa on iteractable-interface suoritetaan interact
+            if(manager.isHoldingItem)
+            {
+                hit.collider.gameObject.GetComponent<ITryUseItem<Item>>()?.TryItem(inspect.UseEquippedItem());
+            }
+            hit.collider.gameObject.GetComponent<IInteractable>()?.Interact();
             //rb.AddForce(FPSCamera.transform.forward * pushForce, ForceMode.Impulse);
         }
     }

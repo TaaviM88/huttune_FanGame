@@ -30,3 +30,18 @@ public enum GameState
     Exit
 }
 #endregion
+
+public enum DoorState
+{
+    Close,
+    Open,
+    Locked,
+    Moving //Eli joku animaatio käynnissä
+}
+
+public enum DoorLockedType
+{
+    Puzzle,
+    Key
+
+}
