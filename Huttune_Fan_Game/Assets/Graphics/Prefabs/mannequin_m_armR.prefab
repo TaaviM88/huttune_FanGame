@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5303047482298316823}
   - component: {fileID: 361925687791046109}
   - component: {fileID: 4961296972592245788}
+  - component: {fileID: 4802297744403176006}
   m_Layer: 0
   m_Name: mannequin_m_armR
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4802297744403176006
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202697532735960532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38203403, y: 0.55999154, z: 0.1887831}
+  m_Center: {x: 0.109388694, y: -0.2607039, z: 0.0068059117}

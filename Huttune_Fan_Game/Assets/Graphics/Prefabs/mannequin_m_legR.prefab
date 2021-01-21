@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1561983935643779525}
   - component: {fileID: 2615075613125257685}
   - component: {fileID: 3455638772300906898}
+  - component: {fileID: 2638315436554744245}
   m_Layer: 0
   m_Name: mannequin_m_legR
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2638315436554744245
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978844215677139059}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2299873, y: 0.9486894, z: 0.3718775}
+  m_Center: {x: 0.030057147, y: -0.42748556, z: 0.049422316}
