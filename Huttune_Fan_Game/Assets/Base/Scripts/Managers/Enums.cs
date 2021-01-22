@@ -39,9 +39,9 @@ public enum DoorState
     Moving //Eli joku animaatio käynnissä
 }
 
-public enum DoorLockedType
+public enum DoorLockType
 {
+    None,
     Puzzle,
     Key
-
 }

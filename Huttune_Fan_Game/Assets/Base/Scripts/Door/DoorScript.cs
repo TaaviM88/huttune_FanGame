@@ -7,10 +7,12 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     Animator anime;
     public bool isLocked = false;
     public DoorState doorState = DoorState.Close;
+    public DoorLockType lockType = DoorLockType.None;
     public string description = "";
     public string hintIfDoorIsLocked = "";
     public Item requiredItemToOpen;
     bool isMoving = false;
+
     // Start is called before the first frame update
     void Start()
     {
