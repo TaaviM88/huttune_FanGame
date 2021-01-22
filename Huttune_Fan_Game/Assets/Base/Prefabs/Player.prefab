@@ -211,9 +211,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 50
+  m_Intensity: 5.2
   m_Range: 50
-  m_SpotAngle: 60
+  m_SpotAngle: 103.46921
   m_InnerSpotAngle: 0
   m_CookieSize: 10
   m_Shadows:
@@ -413,9 +413,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 75
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -485,8 +485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensivity: 150
-  minXAngle: -70
-  maxXAngle: 90
+  minXAngle: -30
+  maxXAngle: 70
   playerBody: {fileID: 0}
   mouseX: 0
   mouseY: 0
@@ -656,8 +656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87343eb8d15df8640bfde47226e27ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  runSpeed: 1.8
+  moveSpeed: 2.2
+  runSpeed: 2
   crouchMultiply: 0.75
   gravity: -9.81
   jumpHeight: 3
