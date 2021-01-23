@@ -11,39 +11,65 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     public string description = "";
     public string hintIfDoorIsLocked = "";
     public Item requiredItemToOpen;
+    public int id = 0;
     bool isMoving = false;
 
+    
     // Start is called before the first frame update
     void Start()
     {
         anime = GetComponent<Animator>();
+        if(lockType == DoorLockType.Puzzle)
+        {
+            CombineLockController.CheckIfPuzzleIsSolve += CheckResults;
+        }
+    }
+
+    private void CheckResults(int idPuzzle, bool isSolved)
+    {
+        if(idPuzzle != id)
+        {
+            return;
+        }
+
+        if(isSolved)
+        {
+            isLocked = false;
+            doorState = DoorState.Close;
+            print("puzzle on ratkaistu");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //print("Is unlocked" + puzzlelockController.openLock);
     }
 
     public bool TryItem(Item usedItem)
     {
-        if(isLocked)
+        if(lockType == DoorLockType.Key)
         {
-            if(requiredItemToOpen.scriptableItem.objName == usedItem.scriptableItem.objName)
+            if (isLocked)
             {
-                isLocked = false;
-                doorState = DoorState.Close;
-                print("Door is open now");
-                return true;
-            }
+                if (requiredItemToOpen.scriptableItem.objName == usedItem.scriptableItem.objName)
+                {
+                    isLocked = false;
+                    doorState = DoorState.Close;
+                    print("Door is open now");
+                    return true;
+                }
 
-            return false;
+                return false;
+            }
+            else
+            {
+                print("Door was open already");
+                return false;
+            }
         }
-        else
-        {
-            print("Door was open already");
-            return false;
-        }
+
+        return false;
     }
 
     public void Interact()
@@ -69,7 +95,9 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
                 
                 break;
             case DoorState.Locked:
+                
                 print($"{hintIfDoorIsLocked}");
+
                 break;
             case DoorState.Moving:
                 break;
@@ -81,5 +109,10 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     public void ToggleMoving()
     {
         isMoving = isMoving ? false : true;
+    }
+
+    private void OnDestroy()
+    {
+        CombineLockController.CheckIfPuzzleIsSolve -= CheckResults;
     }
 }

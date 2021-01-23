@@ -64,7 +64,6 @@ public class PlayerRaycaster : MonoBehaviour
             Item item = hit.collider.gameObject.GetComponent<Item>();
             if (item != null)
             {
-
                 inventory.AddItem(item.scriptableItem);
                 item.PickUpItem();
                 return;

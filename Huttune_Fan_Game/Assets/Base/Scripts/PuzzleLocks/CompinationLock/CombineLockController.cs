@@ -2,21 +2,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class CombineLockController : MonoBehaviour
 {
-    private int[] results, correctCombination;
-
+    public static event Action<int, bool> CheckIfPuzzleIsSolve = delegate { };
+    public static event Action<int, int[]> UpdateHint = delegate { };
+    public int id = 0;
+    public bool randomizeAnswer = false;
+    private int[] results;
+    public int[] correctCombination;
+    public bool isSolved {  get; private set; }
+    public bool openLock { get; private set;}
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        results = new int[] { 0, 0, 0 };
-        correctCombination = new int[] { 3, 7, 9 };
+
+    results = new int[] { 0, 0, 0 };
+        RandomizeCorrectAnswer();
+        //correctCombination = new int[] { 3, 7, 9 };
         CombineWheelRotation.Rotated += CheckResults;
+        isSolved = false;
+        openLock = false;
+
+    }
+
+    private void RandomizeCorrectAnswer()
+    {
+        if(randomizeAnswer)
+        {
+            for (int i = 0; i < correctCombination.Length; i++)
+            {
+                correctCombination[i] = UnityEngine.Random.Range(0, 9);
+            }
+        }
+
+
+        UpdateHint(id, correctCombination);
     }
 
     private void CheckResults(string wheelName, int number)
     {
+        if(isSolved)
+        {
+            return;
+        }
+
         switch(wheelName)
         {
             case "Wheel1":
@@ -25,13 +54,21 @@ public class CombineLockController : MonoBehaviour
             case "Wheel2":
                 results[1] = number;
                 break;
-            case "Wheel4":
+            case "Wheel3":
                 results[2] = number;
                 break;
         }
-        if(results[0] == correctCombination[0])
+        if(results[0] == correctCombination[0] && results[1] == correctCombination[1] && results[2] == correctCombination[2])
         { 
             Debug.Log("Auki");
+            isSolved = true;
+            openLock = true;
+            CheckIfPuzzleIsSolve(id, openLock);
+        }
+        else
+        {
+            isSolved = false;
+            openLock = false;
         }
     }
 

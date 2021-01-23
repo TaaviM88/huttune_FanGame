@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 public class CombineWheelRotation : MonoBehaviour
 {
+    public int id = 0;
     public static event Action<string, int> Rotated = delegate { };
     private bool coroutineAllowed;
     private int numberShown;
@@ -39,7 +40,7 @@ public class CombineWheelRotation : MonoBehaviour
         {
             numberShown = 0;
         }
-
+        
         Rotated(name, numberShown);
     }
 }
