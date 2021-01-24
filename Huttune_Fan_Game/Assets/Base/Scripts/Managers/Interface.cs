@@ -7,3 +7,10 @@ public interface IInteractable
 {
     void Interact();
 }
+
+public interface ITogglePuzzle
+{
+   void DisablePuzzle();
+   void EnablePuzzle();
+    bool IsPuzzleSolved();
+}

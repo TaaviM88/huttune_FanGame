@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class CombineLockController : MonoBehaviour
+public class CombineLockController : MonoBehaviour, ITogglePuzzle
 {
     public static event Action<int, bool> CheckIfPuzzleIsSolve = delegate { };
     public static event Action<int, int[]> UpdateHint = delegate { };
@@ -22,7 +22,7 @@ public class CombineLockController : MonoBehaviour
         CombineWheelRotation.Rotated += CheckResults;
         isSolved = false;
         openLock = false;
-
+        DisablePuzzle();
     }
 
     private void RandomizeCorrectAnswer()
@@ -64,6 +64,7 @@ public class CombineLockController : MonoBehaviour
             isSolved = true;
             openLock = true;
             CheckIfPuzzleIsSolve(id, openLock);
+            Destroy(gameObject);
         }
         else
         {
@@ -75,5 +76,27 @@ public class CombineLockController : MonoBehaviour
     private void OnDestroy()
     {
         CombineWheelRotation.Rotated -= CheckResults;
+    }
+
+    public void DisablePuzzle()
+    {
+        
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<CombineWheelRotation>().enabled = false;
+        }
+    }
+
+    public void EnablePuzzle()
+    {
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<CombineWheelRotation>().enabled = true;
+        }
+    }
+
+    public bool IsPuzzleSolved()
+    {
+        return isSolved;
     }
 }

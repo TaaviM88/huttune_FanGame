@@ -90,10 +90,15 @@ public class ItemInspect : MonoBehaviour
     {
         if(manager.enumManager.actionState != PlayerActionState.inspecting)
         {
-            manager.canMove = false;
-            manager.enumManager.actionState = PlayerActionState.inspecting;
-            //Spawn first item from inventory
-            SpawnItemFromInventory(0);
+            if(manager.canChangeActionState)
+            {
+                manager.canMove = false;
+                manager.enumManager.actionState = PlayerActionState.inspecting;
+                //Spawn first item from inventory
+                SpawnItemFromInventory(0);
+                manager.canChangeActionState = false;
+            }
+
         }
         else
         {
@@ -104,6 +109,7 @@ public class ItemInspect : MonoBehaviour
             }
             manager.enumManager.actionState = PlayerActionState.nothing;
             Cursor.lockState = CursorLockMode.Locked;
+            manager.canChangeActionState = true;
         }
     }
 

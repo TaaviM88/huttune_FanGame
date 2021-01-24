@@ -13,6 +13,8 @@ public class PlayerManager : MonoBehaviour
     public LayerMask normal;
 
     public bool canMove { get; set; }
+    public bool canLookAround { get; set; }
+    public bool canChangeActionState { get; set; }
     public bool isHoldingItem { get; set;}
     // Start is called before the first frame update
     void Awake()
@@ -30,11 +32,36 @@ public class PlayerManager : MonoBehaviour
         
         TurnOffGhostVision();
         canMove = true;
+        canLookAround = true;
+        canChangeActionState = true;
+        enumManager.actionState = PlayerActionState.nothing;
     }
 
     // Update is called once per frame
     void Update()
     {
+        switch (enumManager.actionState)
+        {
+            case PlayerActionState.nothing:
+
+                break;
+            case PlayerActionState.puzzle:
+
+                break;
+            case PlayerActionState.reading:
+                
+                break;
+            case PlayerActionState.peeping:
+                
+                break;
+            case PlayerActionState.inspecting:
+                
+                break;
+            default:
+                
+                break;
+        }
+
         //if(Input.GetButtonDown("Fire3"))
         //{
         //    ToggleMovement();

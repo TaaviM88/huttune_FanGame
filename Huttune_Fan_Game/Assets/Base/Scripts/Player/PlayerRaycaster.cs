@@ -75,6 +75,16 @@ public class PlayerRaycaster : MonoBehaviour
                 hit.collider.gameObject.GetComponent<ITryUseItem<Item>>()?.TryItem(inspect.UseEquippedItem());
             }
             hit.collider.gameObject.GetComponent<IInteractable>()?.Interact();
+
+            if(hit.collider.gameObject.GetComponent<PuzzleController>() != null)
+            {
+                manager.enumManager.actionState = PlayerActionState.puzzle;
+                GetComponent<PlayerPuzzleManager>().StartPuzzleInspect(hit.collider.gameObject.transform);
+                hit.collider.gameObject.GetComponent<PuzzleController>().EnablePuzzle();
+                print("enter puzzle mode!");
+                manager.canChangeActionState = false;
+
+            }
             //rb.AddForce(FPSCamera.transform.forward * pushForce, ForceMode.Impulse);
         }
     }
