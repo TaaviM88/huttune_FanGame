@@ -6,7 +6,7 @@ using UnityEngine;
 public class PuzzleController : MonoBehaviour, ITogglePuzzle
 {
     [Header("Tähän varsinaisen puzzlen script")]
-   public MonoBehaviour puzzleScript;
+    public MonoBehaviour puzzleScript;
     bool isPuzzleSolved = false;
     public void DisablePuzzle()
     {
@@ -20,6 +20,11 @@ public class PuzzleController : MonoBehaviour, ITogglePuzzle
 
     public bool IsPuzzleSolved()
     {
-        return puzzleScript.GetComponent<ITogglePuzzle>().IsPuzzleSolved();
+        return isPuzzleSolved;
+    }
+
+    public void PuzzleIsSolved(bool result)
+    {
+        isPuzzleSolved = result;
     }
 }

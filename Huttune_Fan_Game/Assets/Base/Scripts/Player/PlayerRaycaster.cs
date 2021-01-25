@@ -79,7 +79,7 @@ public class PlayerRaycaster : MonoBehaviour
             if(hit.collider.gameObject.GetComponent<PuzzleController>() != null)
             {
                 manager.enumManager.actionState = PlayerActionState.puzzle;
-                GetComponent<PlayerPuzzleManager>().StartPuzzleInspect(hit.collider.gameObject.transform);
+                GetComponent<PlayerPuzzleManager>().StartPuzzleInspect(hit.collider.gameObject.transform, hit.collider.gameObject.GetComponent<PuzzleController>());
                 hit.collider.gameObject.GetComponent<PuzzleController>().EnablePuzzle();
                 print("enter puzzle mode!");
                 manager.canChangeActionState = false;

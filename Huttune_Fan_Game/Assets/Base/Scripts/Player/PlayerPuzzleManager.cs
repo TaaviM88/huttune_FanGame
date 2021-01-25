@@ -6,6 +6,7 @@ public class PlayerPuzzleManager : MonoBehaviour
 {
 
     PlayerManager manager;
+    PuzzleController puzzControl = null;
     private void Start()
     {
         manager = GetComponent<PlayerManager>();
@@ -19,14 +20,22 @@ public class PlayerPuzzleManager : MonoBehaviour
             {
                 ExitPuzzleMode();
             }
+
+            if(puzzControl != null)
+            {
+               if(puzzControl.IsPuzzleSolved())
+                {
+                    ExitPuzzleMode();
+                }
+            }
         }
 
     }
 
-    public void StartPuzzleInspect(Transform puzzleLocation)
+    public void StartPuzzleInspect(Transform puzzleLocation, PuzzleController  puzzyControl)
     {
         Camera.main.transform.LookAt(puzzleLocation, Vector3.up);
-
+        puzzControl = puzzyControl;
         manager.canMove = false;
         manager.canLookAround = false;
         Cursor.lockState = CursorLockMode.None;
@@ -38,6 +47,7 @@ public class PlayerPuzzleManager : MonoBehaviour
         manager.enumManager.actionState = PlayerActionState.nothing;
         manager.canMove = true;
         manager.canLookAround = true;
+        puzzControl = null;
         Cursor.lockState = CursorLockMode.Locked;       
     }
 }

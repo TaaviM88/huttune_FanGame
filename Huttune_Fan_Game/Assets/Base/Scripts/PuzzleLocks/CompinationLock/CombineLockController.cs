@@ -10,6 +10,7 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
     public bool randomizeAnswer = false;
     private int[] results;
     public int[] correctCombination;
+    public PuzzleController puzzleController;
     public bool isSolved {  get; private set; }
     public bool openLock { get; private set;}
     // Start is called before the first frame update
@@ -64,6 +65,7 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
             isSolved = true;
             openLock = true;
             CheckIfPuzzleIsSolve(id, openLock);
+            puzzleController.PuzzleIsSolved(true);
             Destroy(gameObject);
         }
         else

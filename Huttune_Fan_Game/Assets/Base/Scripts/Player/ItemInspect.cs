@@ -80,6 +80,10 @@ public class ItemInspect : MonoBehaviour
 
     private void UnEquipItem()
     {
+        if(currentlyEquippedItem == null)
+        {
+            return;
+        }
         currentlyEquippedItem.transform.parent = null;
         Destroy(currentlyEquippedItem.gameObject);
         //isHoldingItem = false;
@@ -92,6 +96,12 @@ public class ItemInspect : MonoBehaviour
         {
             if(manager.canChangeActionState)
             {
+                if(inventory.GetFirstItem() == null )
+                {
+                    Debug.Log("Ei ole itemeitä vielä");
+                    return;
+                }
+
                 manager.canMove = false;
                 manager.enumManager.actionState = PlayerActionState.inspecting;
                 //Spawn first item from inventory
@@ -127,7 +137,7 @@ public class ItemInspect : MonoBehaviour
         itemToInspectObj.transform.parent = inspectNode;
         itemToInspectObj.transform.localPosition = Vector3.zero;
         itemToInspectObj.transform.localRotation = Quaternion.Euler(Vector3.zero);
-
+        itemToInspectObj.layer = 13;
         inventory.RemoveItem(itemToInspect);
         Cursor.lockState = CursorLockMode.None;
 
