@@ -796,10 +796,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 805520246, guid: 9cd84dbc7c72556458318e09df51bf95, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805520246, guid: 9cd84dbc7c72556458318e09df51bf95, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805520246, guid: 9cd84dbc7c72556458318e09df51bf95, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2738907658909031169, guid: 9cd84dbc7c72556458318e09df51bf95,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738907659505136182, guid: 9cd84dbc7c72556458318e09df51bf95,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1847
       objectReference: {fileID: 0}
     - target: {fileID: 2738907659785237135, guid: 9cd84dbc7c72556458318e09df51bf95,
         type: 3}
@@ -1164,7 +1181,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 55195f14426b24d4d925013b2c4d9e42,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.465412
+      value: -4.57
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55195f14426b24d4d925013b2c4d9e42,
         type: 3}
@@ -1174,7 +1191,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 55195f14426b24d4d925013b2c4d9e42,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.487
+      value: -5.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 55195f14426b24d4d925013b2c4d9e42,
         type: 3}
@@ -1225,6 +1242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cloth (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55195f14426b24d4d925013b2c4d9e42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7511558181221131132, guid: 55195f14426b24d4d925013b2c4d9e42, type: 3}
@@ -1965,6 +1987,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloth
       objectReference: {fileID: 0}
+    - target: {fileID: 3557160248027753085, guid: 16452bd06fcd57a4891d9ec0bf19bf60,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4185606342165524679, guid: 16452bd06fcd57a4891d9ec0bf19bf60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1978,7 +2005,7 @@ PrefabInstance:
     - target: {fileID: 4185606342165524679, guid: 16452bd06fcd57a4891d9ec0bf19bf60,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.4766665
+      value: -5.473
       objectReference: {fileID: 0}
     - target: {fileID: 4185606342165524679, guid: 16452bd06fcd57a4891d9ec0bf19bf60,
         type: 3}
