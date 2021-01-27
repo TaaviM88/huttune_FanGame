@@ -92,8 +92,8 @@ public class GeckoController_Full : MonoBehaviour
         currentVelocity.Step(targetVelocity, moveAcceleration);
 
         // Apply translation and rotation
-        controller.SimpleMove(currentVelocity);
-        //transform.position += currentVelocity.currentValue * Time.deltaTime;
+        //controller.SimpleMove(currentVelocity);
+        transform.position += currentVelocity.currentValue * Time.deltaTime;
         transform.rotation *= Quaternion.AngleAxis(Time.deltaTime * currentAngularVelocity, transform.up);
     }
 
