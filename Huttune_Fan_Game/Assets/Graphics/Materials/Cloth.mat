@@ -22,15 +22,14 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Cloth
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _NORMALMAP
+  m_ShaderKeywords: _ALPHATEST_ON _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 3050
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2500
   stringTagMap:
-    RenderType: Transparent
-  disabledShaderPasses:
-  - SHADOWCASTER
+    RenderType: TransparentCutout
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -123,7 +122,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AlphaClip: 0
+    - _AlphaClip: 1
     - _AoIntensity: 1
     - _Blend: 0
     - _BlendMainNormal: 1
@@ -132,15 +131,15 @@ Material:
     - _BumpScale: 1
     - _ChannelSelectionMask: 0
     - _ContrastDetailMap: 0
-    - _Cull: 0
-    - _Cutoff: 0.421
+    - _Cull: 2
+    - _Cutoff: 0.2
     - _DetailBrightness: 1
     - _DetailGlossiness: 0.5
     - _DetailNormalMapScale: 0.3
     - _DetailSaturation: 0
     - _DetailSource: 0
     - _DetailSpecularIntensity: 0.2
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EmissionIntensity: 1
     - _EnableDetailMask: 0
     - _EnvironmentReflections: 1
@@ -172,8 +171,8 @@ Material:
     - _SpecularHighlights: 1
     - _SpecularIntensity: 0.2
     - _SpreadDetailMap: 0
-    - _SrcBlend: 5
-    - _Surface: 1
+    - _SrcBlend: 1
+    - _Surface: 0
     - _TriplanarFalloff: 20
     - _TriplanarSpaceProjection: 0
     - _UVSec: 0
@@ -189,7 +188,7 @@ Material:
     - _VisualizeMask: 0
     - _WorkflowMode: 1
     - _ZTest: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     - __dirty: 1
     m_Colors:
     - _BASE_COLOR: {r: 0, g: 0, b: 0, a: 0}
