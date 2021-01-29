@@ -45,3 +45,25 @@ public enum DoorLockType
     Puzzle,
     Key
 }
+
+public enum WashingMachinePuzzleState
+{
+    NoPower,
+    PowerOn,
+    DetergentOn,
+    laundryOn,
+    washProgram,
+    washMaschineOn,
+    washMachineOnFire,
+    washMachinFireOut,
+}   
+
+public enum WashingMachineState
+{
+    Idle,
+    LidOpen,
+    DoorOpen,
+    DoorClose,
+    AnimationOn,
+    OnFire,
+}
