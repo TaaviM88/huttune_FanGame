@@ -45,13 +45,14 @@ public enum DoorLockType
     Puzzle,
     Key
 }
-
+#region WashingMachine
 public enum WashingMachinePuzzleState
 {
     NoPower,
     PowerOn,
     DetergentOn,
-    laundryOn,
+    laundryNotAdded,
+    laundryAdded,
     washProgram,
     washMaschineOn,
     washMachineOnFire,
@@ -67,3 +68,12 @@ public enum WashingMachineState
     AnimationOn,
     OnFire,
 }
+
+public enum WashMachineLidState
+{
+    ClosedNoDetergentAdded,
+    OpenNoDetergentAdded,
+    OpenDetergentAdded,
+    ClosedDetergentAdded,
+}
+#endregion
