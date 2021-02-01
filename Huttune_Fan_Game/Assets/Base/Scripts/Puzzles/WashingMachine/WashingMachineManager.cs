@@ -37,6 +37,7 @@ public class WashingMachineManager : MonoBehaviour, IInteractable
                 break;
             case WashingMachinePuzzleState.DetergentOn:
                 UpdateJournal("Detergent added");
+                ChangePuzzleState(WashingMachinePuzzleState.laundryNotAdded);
                 break;
             case WashingMachinePuzzleState.laundryNotAdded:
                 UpdateJournal("There is now laundry");

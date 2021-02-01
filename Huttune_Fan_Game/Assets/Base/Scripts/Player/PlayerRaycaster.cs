@@ -9,6 +9,7 @@ public class PlayerRaycaster : MonoBehaviour
 
     public float range = 10f;
     public float pushForce = 25f;
+    public LayerMask mask;
     public GameObject throwObjPrefab;
     private GameObject apple = null;
     private float holdDownStartTimer;
@@ -58,7 +59,7 @@ public class PlayerRaycaster : MonoBehaviour
     private void ProcessRayCast()
     {
         RaycastHit hit;
-        if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range))
+        if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range, mask))
         {
             //Jos osutaan itemiin niin poimitaan se ja lopetetaan raycast
             Item item = hit.collider.gameObject.GetComponent<Item>();

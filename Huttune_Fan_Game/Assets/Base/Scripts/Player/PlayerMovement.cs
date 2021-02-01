@@ -85,8 +85,8 @@ public class PlayerMovement : MonoBehaviour
 
   
             velocity.y += gravity * Time.deltaTime;
-        
-        
+
+        velocity.y = Mathf.Clamp(velocity.y, -10, 10);
         controller.Move(velocity * Time.deltaTime);
 
     }
