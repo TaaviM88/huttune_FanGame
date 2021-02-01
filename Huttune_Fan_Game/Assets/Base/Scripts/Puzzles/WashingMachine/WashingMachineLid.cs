@@ -26,7 +26,7 @@ public class WashingMachineLid : MonoBehaviour, IInteractable, ITryUseItem<Item>
     }
 
     public void Interact()
-    {
+    {   
         if(manager.puzzleState > WashingMachinePuzzleState.NoPower)
         {
             switch (state)
@@ -73,8 +73,11 @@ public class WashingMachineLid : MonoBehaviour, IInteractable, ITryUseItem<Item>
                     {
                         if(detergentAdded)
                         {
-                            UpdateJournal("Detergent is alreadty added.");
-                            manager.ChangePuzzleState(WashingMachinePuzzleState.DetergentOn);
+                            UpdateJournal("Detergent is already added.");
+                            if(manager.puzzleState < WashingMachinePuzzleState.DetergentOn)
+                            {
+                                manager.ChangePuzzleState(WashingMachinePuzzleState.DetergentOn);
+                            }
                         }
                         else
                         {

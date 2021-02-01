@@ -76,4 +76,12 @@ public enum WashMachineLidState
     OpenDetergentAdded,
     ClosedDetergentAdded,
 }
+
+public enum WashMachineDoorState
+{
+    ClosedNoLoundry,
+    OpenNoLaundry,
+    ClosedLaundryAdded,
+    OpenLaundryAdded,
+}
 #endregion
