@@ -12,7 +12,7 @@ public class WashingMachineManager : MonoBehaviour, IInteractable
     public int id = 0;
     public bool canChangeState = true;
     public bool canChangePuzzleState = true;
-    bool powerIsOn = false, detergentAdded = false, laundryadded = false;
+    bool powerIsOn = false, detergentAdded = false, laundryadded = false, isCalled = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -84,5 +84,15 @@ public class WashingMachineManager : MonoBehaviour, IInteractable
     {
         anime.SetTrigger(triggerName);
 
+    }
+
+    public void StartWashMachine()
+    {
+        //Start Washmachine
+
+        if(isCalled)
+        {
+
+        }
     }
 }

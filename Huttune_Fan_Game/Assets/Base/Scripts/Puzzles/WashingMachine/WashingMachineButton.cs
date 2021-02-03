@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WashingMachineButton : MonoBehaviour
+public class WashingMachineButton : MonoBehaviour, IInteractable
 {
+    public WashingMachineManager manager;
+    bool isPressed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +18,11 @@ public class WashingMachineButton : MonoBehaviour
     {
         
     }
+
+
+    public void Interact()
+    {
+        throw new System.NotImplementedException();
+    }
+
 }
