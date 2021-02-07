@@ -5,7 +5,7 @@ using UnityEngine;
 public class PhoneManager : MonoBehaviour, ITogglePuzzle
 {
     public Transform pointer;
-    public List<PhoneButton> buttons = new List<PhoneButton>();
+    public List<Transform> buttons = new List<Transform>();
     Animator anime;
     bool answerOn = false;
     public int[] correctSequence = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
@@ -21,7 +21,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
         {
             if (child.GetComponent<PhoneButton>())
             {
-                buttons.Add(child.GetComponent<PhoneButton>());
+                buttons.Add(child);
             }
         }
     }
@@ -52,26 +52,34 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
     {
         
 
-        if(currentCursorIndex < buttons.Count - 1)
+        if(currentCursorIndex +index < buttons.Count && currentCursorIndex + index >= 0)
         {
             currentCursorIndex += (int)index;
-        }
-        else if(currentCursorIndex <= 0)
-        {
-            currentCursorIndex = 0;
+            MovePointer(buttons[currentCursorIndex].position);
         }
         else
         {
-            currentCursorIndex = 0;
+            if(currentCursorIndex + index < 0)
+            {
+                currentCursorIndex = buttons.Count -1;
+                MovePointer(buttons[currentCursorIndex].position);
+            }
+            else
+            {
+                currentCursorIndex = 0;
+                MovePointer(buttons[currentCursorIndex].position);
+            }
+            
         }
-        MovePointer(buttons[currentCursorIndex].gameObject.transform.localPosition);
+
+        
     }
 
 
     private void MovePointer(Vector3 buttonTransform)
     {
         Vector3 newPosition = buttonTransform;
-        pointer.transform.localPosition = new Vector3(newPosition.x, newPosition.y, pointer.transform.localPosition.z);
+        pointer.transform.position = new Vector3(newPosition.x, newPosition.y, pointer.transform.position.z);
     }
 
     public void TriggerAnimation(string trigger)
