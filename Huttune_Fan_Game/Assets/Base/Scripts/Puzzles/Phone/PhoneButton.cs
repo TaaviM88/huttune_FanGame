@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PhoneButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int buttonNumber = 0;
 
-    // Update is called once per frame
-    void Update()
+    public int GetNumber()
     {
-        
+        //Play sound
+        return buttonNumber;
     }
 }

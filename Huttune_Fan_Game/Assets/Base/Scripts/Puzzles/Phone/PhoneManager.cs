@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +9,15 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
     public List<Transform> buttons = new List<Transform>();
     Animator anime;
     bool answerOn = false;
-    public int[] correctSequence = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+    public List<int> correctSequence = new List<int>();
+    public List<int> pressedSequance = new List<int>();
+    //public int[] correctSequence = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+    //public int[] pressedSequance;
     bool isCalled = false;
     bool canMoveNextButton = true;
     [SerializeField]
     int currentCursorIndex = 1;
+    int pNumberIndex = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,41 +50,89 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
             {
                 canMoveNextButton = true;
             }
+
+            if(Input.GetButtonDown("Fire1"))
+            {
+                PressButton();
+            }
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                DisablePuzzle();
+            }
         }
+    }
+
+    private void PressButton()
+    {
+       pressedSequance.Add(buttons[currentCursorIndex].GetComponent<PhoneButton>().GetNumber());
+       anime.SetTrigger($"Button_{currentCursorIndex}");
+       CheckIfCorrectSequance();
+    }
+
+
+    private void CheckIfCorrectSequance()
+    {
+        if (correctSequence.Count != pressedSequance.Count)
+        {  
+            if(pressedSequance.Count > correctSequence.Count)
+            {
+
+                pressedSequance.Clear();
+                print("Väärä numero. Aloitetaan alusta");
+                return;
+            }
+            else
+            {
+
+                return;
+            }
+           
+        }
+
+        for (int i = 0; i < correctSequence.Count; i++)
+        {
+            if (correctSequence[i] != pressedSequance[i])
+            {
+                pressedSequance.Clear();
+                print("Väärä numero. Aloitetaan alusta");
+                return;
+            }
+        }
+
+        print("Oikea numero");
     }
 
     private void ButtonHandler(float index)
     {
-        
 
         if(currentCursorIndex +index < buttons.Count && currentCursorIndex + index >= 0)
         {
             currentCursorIndex += (int)index;
-            MovePointer(buttons[currentCursorIndex].position);
+            MovePointer(buttons[currentCursorIndex].GetChild(0).localPosition);
         }
         else
         {
             if(currentCursorIndex + index < 0)
             {
                 currentCursorIndex = buttons.Count -1;
-                MovePointer(buttons[currentCursorIndex].position);
+                MovePointer(buttons[currentCursorIndex].GetChild(0).localPosition);
             }
             else
             {
                 currentCursorIndex = 0;
-                MovePointer(buttons[currentCursorIndex].position);
+                MovePointer(buttons[currentCursorIndex].GetChild(0).localPosition);
             }
             
         }
 
-        
     }
 
 
     private void MovePointer(Vector3 buttonTransform)
     {
         Vector3 newPosition = buttonTransform;
-        pointer.transform.position = new Vector3(newPosition.x, newPosition.y, pointer.transform.position.z);
+        pointer.transform.localPosition = new Vector3(newPosition.x, newPosition.y, pointer.transform.localPosition.z);
     }
 
     public void TriggerAnimation(string trigger)
@@ -98,6 +151,15 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
         {
             BoolAnimation(false);
             answerOn = false;
+            pNumberIndex = 0;
+            currentCursorIndex = 1;
+
+            for (int i = 0; i <pressedSequance.Count; i++)
+            {
+                pressedSequance[i] = 0;
+            }
+
+            pressedSequance.Clear();
         }
     }
 
