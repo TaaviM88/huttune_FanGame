@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WashingMachineManager : MonoBehaviour, IInteractable
+public class WashingMachineManager : MonoBehaviour, IInteractable, ITryUseItem<Item>
 {
     Animator anime;
+    SpawnItem spawnItem;
     public WashingMachinePuzzleState puzzleState = WashingMachinePuzzleState.NoPower;
     public WashingMachineState wmState = WashingMachineState.Idle;
     public string description = "";
@@ -12,17 +13,17 @@ public class WashingMachineManager : MonoBehaviour, IInteractable
     public int id = 0;
     public bool canChangeState = true;
     public bool canChangePuzzleState = true;
-    bool powerIsOn = false, detergentAdded = false, laundryadded = false, isCalled = false;
+    bool powerIsOn = false, detergentAdded = false, laundryadded = false,
+        isCalled = false, machineIsOn = false, machineOnFire = false;
+    public bool isSolved = false;
+
+    public Item requiredToPutOutFire;
+
     // Start is called before the first frame update
     void Start()
     {
         anime = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        spawnItem = GetComponent<SpawnItem>();
     }
 
     public void Interact()
@@ -34,13 +35,16 @@ public class WashingMachineManager : MonoBehaviour, IInteractable
                 break;
             case WashingMachinePuzzleState.PowerOn:
                 UpdateJournal("Power is on");
+                powerIsOn = true;
                 break;
             case WashingMachinePuzzleState.DetergentOn:
                 UpdateJournal("Detergent added");
+                detergentAdded = true;
                 ChangePuzzleState(WashingMachinePuzzleState.laundryNotAdded);
                 break;
             case WashingMachinePuzzleState.laundryNotAdded:
                 UpdateJournal("There is now laundry");
+                laundryadded = true;
                 break;
             case WashingMachinePuzzleState.laundryAdded:
 
@@ -52,10 +56,23 @@ public class WashingMachineManager : MonoBehaviour, IInteractable
 
                 break;
             case WashingMachinePuzzleState.washMachineOnFire:
-
+                if(!machineOnFire)
+                {
+                    //spawn particles
+                    //play alarm sound
+                    machineOnFire = true;
+                }
+                
                 break;
             case WashingMachinePuzzleState.washMachinFireOut:
-
+                if(!isSolved)
+                {
+                    //end alarm sound
+                    //Kill particles
+                    //end animation
+                    spawnItem.SpawnKeyItem();
+                    isSolved = true;
+                }                
                 break;
         }
     }
@@ -83,16 +100,57 @@ public class WashingMachineManager : MonoBehaviour, IInteractable
     public void TriggerAnime(string triggerName)
     {
         anime.SetTrigger(triggerName);
-
     }
 
     public void StartWashMachine()
     {
         //Start Washmachine
 
-        if(isCalled)
+        if(isCalled && powerIsOn && detergentAdded && laundryadded)
         {
-
+            TriggerAnime("TriggerTurnOnMachine");
+            puzzleState = WashingMachinePuzzleState.washMaschineOn;
+            canChangePuzzleState = false;
         }
     }
+
+    public void SetIsCalled(bool b)
+    {
+        isCalled = b;
+    }
+
+    public bool GetIsCalled()
+    {
+        return isCalled;
+    }
+
+    public void SetMachineToFire()
+    {
+        //Spawn particles
+        machineOnFire = true;
+        puzzleState = WashingMachinePuzzleState.washMachineOnFire;
+    }
+
+    public bool TryItem(Item usedItem)
+    {
+
+        if (puzzleState == WashingMachinePuzzleState.washMachineOnFire)
+        {
+            if(usedItem.name == requiredToPutOutFire.name)
+            {
+                puzzleState = WashingMachinePuzzleState.washMachinFireOut;
+                return true;
+            }
+            else
+            {
+                UpdateJournal("Doesn't help");
+                return false;
+            }
+        }
+
+        UpdateJournal("Why? It doesn't do anything.");
+
+        return false;
+    }
 }
+

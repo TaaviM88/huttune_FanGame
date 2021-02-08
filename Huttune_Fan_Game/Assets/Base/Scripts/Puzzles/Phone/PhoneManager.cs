@@ -7,6 +7,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
 {
     public Transform pointer;
     public List<Transform> buttons = new List<Transform>();
+    public WashingMachineManager wmManager;
     Animator anime;
     bool answerOn = false;
     public List<int> correctSequence = new List<int>();
@@ -73,9 +74,24 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
 
     private void CheckIfCorrectSequance()
     {
+        
         if (correctSequence.Count != pressedSequance.Count)
-        {  
-            if(pressedSequance.Count > correctSequence.Count)
+        {
+            //Check if we have pressed correct number
+
+            if(correctSequence[pNumberIndex] != pressedSequance[pNumberIndex])
+            {
+                pressedSequance.Clear();
+                pNumberIndex = 0;
+                print("Väärä numero. Aloitetaan alusta");
+                return;
+            }
+            else
+            {
+                pNumberIndex++;
+            }
+
+            if (pressedSequance.Count > correctSequence.Count)
             {
 
                 pressedSequance.Clear();
@@ -101,6 +117,17 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
         }
 
         print("Oikea numero");
+        CallCorrectNumber();
+    }
+
+    private void CallCorrectNumber()
+    {
+        //Play voice and sound
+        isCalled = true;
+        if(!wmManager.GetIsCalled())
+        {
+            wmManager.SetIsCalled(isCalled);
+        }
     }
 
     private void ButtonHandler(float index)
@@ -174,6 +201,6 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
 
     public bool IsPuzzleSolved()
     {
-        throw new System.NotImplementedException();
+        return isCalled;
     }
 }

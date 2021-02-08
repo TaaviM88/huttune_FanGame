@@ -22,7 +22,8 @@ public class WashingMachineButton : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        throw new System.NotImplementedException();
+        print("Yritetään käynnistää pesukonetta");
+        manager.StartWashMachine();
     }
 
 }
