@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1786199568112649781}
   - component: {fileID: 2130180178319105945}
+  - component: {fileID: 3609859576614590982}
   m_Layer: 0
   m_Name: Locker
   m_TagString: Untagged
@@ -46,6 +47,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.45918027, y: 1.7264469, z: 0.39471197}
   m_Center: {x: 0.005372271, y: 0.86937404, z: 0.012535572}
+--- !u!95 &3609859576614590982
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405698848701013135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f40d1b43fe1d2a94cbfa79e109b2a7fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1829062508024788945
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +92,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829062508024788945}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.20953587, y: 0.9698357, z: 0.17186478}
+  m_LocalPosition: {x: -0.2095359, y: 0.9698357, z: 0.1718648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786199568112649781}
