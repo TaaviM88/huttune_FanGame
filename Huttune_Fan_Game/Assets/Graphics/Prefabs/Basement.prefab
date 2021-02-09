@@ -777,12 +777,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a8b3f736ffe895842ae3ec2ae3455688, type: 2}
+      objectReference: {fileID: 2100000, guid: 9c8b75c8547c08846b22c5a296b7a8f7, type: 2}
     - target: {fileID: -126354399998233004, guid: 2518f542664ca434f9eff30119c6bdd3,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 9c8b75c8547c08846b22c5a296b7a8f7, type: 2}
+      objectReference: {fileID: 2100000, guid: a8b3f736ffe895842ae3ec2ae3455688, type: 2}
     - target: {fileID: -126354399998233004, guid: 2518f542664ca434f9eff30119c6bdd3,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
