@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1786199568112649781}
-  - component: {fileID: 2130180178319105945}
   - component: {fileID: 3609859576614590982}
   m_Layer: 0
   m_Name: Locker
@@ -34,19 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2130180178319105945
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405698848701013135}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.45918027, y: 1.7264469, z: 0.39471197}
-  m_Center: {x: 0.005372271, y: 0.86937404, z: 0.012535572}
 --- !u!95 &3609859576614590982
 Animator:
   serializedVersion: 3
@@ -77,6 +63,7 @@ GameObject:
   - component: {fileID: 2413582418585594412}
   - component: {fileID: 6391704340612081344}
   - component: {fileID: 1151746654817752733}
+  - component: {fileID: 9014589287285385898}
   m_Layer: 0
   m_Name: LockerDoor
   m_TagString: Untagged
@@ -145,6 +132,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &9014589287285385898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829062508024788945}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4318261, y: 1.645822, z: 0.028042644}
+  m_Center: {x: 0.209102, y: -0.07724938, z: 0.012306573}
 --- !u!1 &3857283382011531955
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 1302892632691474181}
   - component: {fileID: 4466299521204423816}
   - component: {fileID: 1331861979439120619}
+  - component: {fileID: 2977527384075864432}
   m_Layer: 0
   m_Name: Locker
   m_TagString: Untagged
@@ -203,7 +204,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 17bd0762290944f4eb9f2041405f01a8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,3 +225,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2977527384075864432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857283382011531955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43182608, y: 1.7099249, z: 0.33804777}
+  m_Center: {x: 0, y: 0.8630233, z: 0}
