@@ -8,21 +8,30 @@ public class CombineWheelRotation : MonoBehaviour
     public static event Action<string, int> Rotated = delegate { };
     private bool coroutineAllowed;
     private int numberShown;
-
+    private int direction = 0;
     // Start is called before the first frame update
     void Start()
     {
         coroutineAllowed = true;
-        numberShown = 0;
+        numberShown = 1;
     }
 
-    private void OnMouseDown()
+    public void RotateWheelDirection(int dir)
     {
         if(coroutineAllowed)
         {
+            direction = dir;
             StartCoroutine(RotateWheel());
         }
     }
+
+    //private void OnMouseDown()
+    //{
+    //    if(coroutineAllowed)
+    //    {
+    //        StartCoroutine(RotateWheel());
+    //    }
+    //}
 
     private IEnumerator RotateWheel()
     {
@@ -33,6 +42,7 @@ public class CombineWheelRotation : MonoBehaviour
             transform.Rotate(0, -1, 0);
             yield return new WaitForSeconds(0.01f);
         }
+
         coroutineAllowed = true;
         numberShown += 1;
 

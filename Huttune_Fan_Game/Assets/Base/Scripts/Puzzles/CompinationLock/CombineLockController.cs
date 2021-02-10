@@ -6,6 +6,7 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
 {
     public static event Action<int, bool> CheckIfPuzzleIsSolve = delegate { };
     public static event Action<int, int[]> UpdateHint = delegate { };
+    public List<CombineWheelRotation> wheels = new List<CombineWheelRotation>();
     public int id = 0;
     public bool randomizeAnswer = false;
     private int[] results;
@@ -16,7 +17,13 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
     // Start is called before the first frame update
     void Awake()
     {
-
+        foreach (Transform child in transform)
+        {
+            if(child.GetComponent<CombineWheelRotation>())
+            {
+                wheels.Add(child.GetComponent<CombineWheelRotation>());
+            }
+        }
     results = new int[] { 0, 0, 0 };
         RandomizeCorrectAnswer();
         //correctCombination = new int[] { 3, 7, 9 };
@@ -24,6 +31,11 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
         isSolved = false;
         openLock = false;
         DisablePuzzle();
+    }
+
+    private void Update()
+    {
+        
     }
 
     private void RandomizeCorrectAnswer()
@@ -57,6 +69,12 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
                 break;
             case "Wheel3":
                 results[2] = number;
+                break;
+            case "Wheel4":
+                results[3] = number;
+                break;
+            case "Wheel5":
+                results[4] = number;
                 break;
         }
         if(results[0] == correctCombination[0] && results[1] == correctCombination[1] && results[2] == correctCombination[2])
