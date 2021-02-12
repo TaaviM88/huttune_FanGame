@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3562661575724818243}
   - component: {fileID: 1866021576981720876}
   - component: {fileID: 2301163119648211689}
+  - component: {fileID: 1807124496}
   m_Layer: 0
   m_Name: LockCylinder3
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1807124496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710836107198147347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288428d6d82513e4997cf8176d45564b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
 --- !u!1 &2004325637020024309
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,8 +102,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196579953244186447}
+  - component: {fileID: 1198509177}
+  - component: {fileID: 1198509175}
   m_Layer: 0
-  m_Name: Combination_Lock
+  m_Name: Combination_Lock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,6 +127,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1198509177
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004325637020024309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07643032, y: 0.12345147, z: 0.036379814}
+  m_Center: {x: 0.00043535233, y: 0.015581727, z: 0.0021395683}
+--- !u!114 &1198509175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004325637020024309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed272284fbef6541a63390c534563bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleScript: {fileID: 1902303986}
 --- !u!1 &3532474483218519680
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +164,7 @@ GameObject:
   - component: {fileID: 2303002051494395022}
   - component: {fileID: 5619636871849815678}
   - component: {fileID: 6428399567566911668}
+  - component: {fileID: 1051044302}
   m_Layer: 0
   m_Name: LockCylinder2
   m_TagString: Untagged
@@ -190,6 +233,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1051044302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532474483218519680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288428d6d82513e4997cf8176d45564b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
 --- !u!1 &5135299771971760562
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +257,7 @@ GameObject:
   - component: {fileID: 5108415701575419755}
   - component: {fileID: 2618017067395422756}
   - component: {fileID: 4420919848677877648}
+  - component: {fileID: 1902303986}
   m_Layer: 0
   m_Name: LockBody
   m_TagString: Untagged
@@ -272,6 +329,24 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1902303986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5135299771971760562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0efd0a2ca9b514ca57a3d8e59b6579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheels: []
+  id: 1
+  randomizeAnswer: 0
+  correctCombination: 010000000100000001000000
+  puzzleController: {fileID: 1198509175}
+  currentWheelIndex: 0
 --- !u!1 &6242329260224885173
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +358,7 @@ GameObject:
   - component: {fileID: 3535470437167351297}
   - component: {fileID: 355388458050509129}
   - component: {fileID: 9145422377731897180}
+  - component: {fileID: 743468297}
   m_Layer: 0
   m_Name: LockCylinder1
   m_TagString: Untagged
@@ -351,6 +427,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &743468297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6242329260224885173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288428d6d82513e4997cf8176d45564b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
 --- !u!1 &8571343688263004947
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,13 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
     public PuzzleController puzzleController;
     public bool isSolved {  get; private set; }
     public bool openLock { get; private set;}
+
+    bool isPuzzleOn = false;
+    bool canMoveNextWheel = true;
+    bool canScrollWheel = true;
+
+    [SerializeField]
+    int currentWheelIndex = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,6 +30,7 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
             {
                 wheels.Add(child.GetComponent<CombineWheelRotation>());
             }
+
         }
     results = new int[] { 0, 0, 0 };
         RandomizeCorrectAnswer();
@@ -35,7 +43,68 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
 
     private void Update()
     {
-        
+        if (isPuzzleOn)
+        {
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+
+            ChangeWheel(horizontal);
+
+            ScrollWheel(vertical);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                DisablePuzzle();
+            }
+        }
+    }
+
+    private void ScrollWheel(float vertical)
+    {
+        if (canScrollWheel && vertical != 0)
+        {
+            wheels[currentWheelIndex].RotateWheelDirection((int)vertical);
+
+            canScrollWheel = false;
+        }
+
+        if (vertical == 0)
+        {
+            canScrollWheel = true;
+        }
+    }
+
+    private void ChangeWheel(float horizontal)
+    {
+        if (canMoveNextWheel && horizontal != 0)
+        {
+            if(horizontal > 0)
+            {
+                currentWheelIndex++;
+
+                if(currentWheelIndex > wheels.Count -1)
+                {
+                    currentWheelIndex = 0;
+                }
+            }
+            
+            if(horizontal < 0)
+            {
+                currentWheelIndex--;
+
+                if (currentWheelIndex < 0)
+                {
+                    currentWheelIndex = wheels.Count -1;
+                }
+            }
+
+            canMoveNextWheel = false;
+        }
+
+        if (horizontal == 0)
+        {
+            canMoveNextWheel = true;
+        }
     }
 
     private void RandomizeCorrectAnswer()
@@ -47,7 +116,6 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
                 correctCombination[i] = UnityEngine.Random.Range(0, 9);
             }
         }
-
 
         UpdateHint(id, correctCombination);
     }
@@ -61,19 +129,19 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
 
         switch(wheelName)
         {
-            case "Wheel1":
+            case "LockCylinder1":
                 results[0] = number;
                 break;
-            case "Wheel2":
+            case "LockCylinder2":
                 results[1] = number;
                 break;
-            case "Wheel3":
+            case "LockCylinder3":
                 results[2] = number;
                 break;
-            case "Wheel4":
+            case "LockCylinder4":
                 results[3] = number;
                 break;
-            case "Wheel5":
+            case "LockCylinder5":
                 results[4] = number;
                 break;
         }
@@ -105,6 +173,11 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
         {
             child.GetComponent<CombineWheelRotation>().enabled = false;
         }
+
+        currentWheelIndex = 0;
+        canScrollWheel = true;
+        canMoveNextWheel = true;
+        isPuzzleOn = false;
     }
 
     public void EnablePuzzle()
@@ -113,6 +186,11 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
         {
             child.GetComponent<CombineWheelRotation>().enabled = true;
         }
+
+        currentWheelIndex = 0;
+        canScrollWheel = true;
+        canMoveNextWheel = true;
+        isPuzzleOn = true;
     }
 
     public bool IsPuzzleSolved()

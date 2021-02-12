@@ -144,16 +144,16 @@ MonoBehaviour:
   m_AdvancedMode: 0
   patternIndex:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   ditherThreshold:
     m_OverrideState: 1
-    m_Value: 25
+    m_Value: 512
   ditherStrength:
     m_OverrideState: 1
-    m_Value: 25
+    m_Value: 57.5
   ditherScale:
     m_OverrideState: 1
-    m_Value: 25
+    m_Value: 43
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,10 +170,55 @@ MonoBehaviour:
   - {fileID: 6775376097864012941}
   - {fileID: 7488742677745068149}
   - {fileID: -3305224281371206947}
+  - {fileID: 4576352313860473948}
   - {fileID: -3062111974151535979}
   - {fileID: 3175736757793650189}
-  - {fileID: 4576352313860473948}
   - {fileID: -3678468707112407362}
+  - {fileID: 958398613457751100}
+--- !u!114 &958398613457751100
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32eb3b8fb939d9b41b04b5621e6d36dd, type: 3}
+  m_Name: Fog2
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  fogDensity:
+    m_OverrideState: 1
+    m_Value: 2
+  fogDistance:
+    m_OverrideState: 1
+    m_Value: 10
+  fogColor:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    hdr: 0
+    showAlpha: 1
+    showEyeDropper: 1
+  fogNear:
+    m_OverrideState: 1
+    m_Value: 11.55
+  fogFar:
+    m_OverrideState: 1
+    m_Value: 100
+  fogAltScale:
+    m_OverrideState: 1
+    m_Value: 10
+  fogThinning:
+    m_OverrideState: 1
+    m_Value: 100
+  noiseScale:
+    m_OverrideState: 1
+    m_Value: 103.34
+  noiseStrength:
+    m_OverrideState: 1
+    m_Value: 37.8
 --- !u!114 &3175736757793650189
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -196,7 +241,7 @@ MonoBehaviour:
     m_Value: 480
   colorPrecision:
     m_OverrideState: 1
-    m_Value: 32
+    m_Value: 128
 --- !u!114 &4576352313860473948
 MonoBehaviour:
   m_ObjectHideFlags: 3

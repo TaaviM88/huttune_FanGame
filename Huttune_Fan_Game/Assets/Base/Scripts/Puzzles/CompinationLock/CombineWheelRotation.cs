@@ -37,20 +37,47 @@ public class CombineWheelRotation : MonoBehaviour
     {
         coroutineAllowed = false;
 
-        for (int i = 0; i < 36; i++)
+        if(direction > 0)
         {
-            transform.Rotate(0, -1, 0);
-            yield return new WaitForSeconds(0.01f);
+            for (int i = 0; i < 36; i++)
+            {
+                transform.Rotate(-1, 0, 0);
+                yield return new WaitForSeconds(0.01f);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 36; i++)
+            {
+                transform.Rotate(+1, 0, 0);
+                yield return new WaitForSeconds(0.01f);
+            }
         }
 
+
         coroutineAllowed = true;
-        numberShown += 1;
+
+         if (direction > 0)
+        {
+            numberShown += 1;
+        }
+          else
+        {
+            numberShown -= 1;
+        }
 
         if(numberShown > 9)
         {
             numberShown = 0;
         }
         
+
+        if(numberShown < 0)
+        {
+            numberShown = 9;
+        }
+
+        print(name);
         Rotated(name, numberShown);
     }
 }

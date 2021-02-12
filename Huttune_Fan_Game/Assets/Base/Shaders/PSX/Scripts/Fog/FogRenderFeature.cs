@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.Rendering.Universal;
 
 namespace PSX
@@ -38,7 +39,7 @@ namespace PSX
         static readonly int NoiseScale = Shader.PropertyToID("_NoiseScale");
         static readonly int NoiseStrength = Shader.PropertyToID("_NoiseStrength");
         
-        Fog fog;
+        Fog2 fog;
         Material fogMaterial;
         RenderTargetIdentifier currentTarget;
     
@@ -66,7 +67,7 @@ namespace PSX
     
             var stack = VolumeManager.instance.stack;
             
-            this.fog = stack.GetComponent<Fog>();
+            this.fog = stack.GetComponent<Fog2>();
             if (this.fog == null) { return; }
             if (!this.fog.IsActive()) { return; }
     

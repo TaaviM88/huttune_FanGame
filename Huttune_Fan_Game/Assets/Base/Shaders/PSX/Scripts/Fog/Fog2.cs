@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
-
+//using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering.HighDefinition;
 namespace PSX
 {
-    public class Fog : VolumeComponent, IPostProcessComponent
+    public class Fog2 : VolumeComponent, IPostProcessComponent
     {
         //PARAMETERS HERE!
         [Range(0,10)]

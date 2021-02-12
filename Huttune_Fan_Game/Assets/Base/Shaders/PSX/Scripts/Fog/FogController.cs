@@ -10,7 +10,7 @@ namespace PSX
         [SerializeField] protected VolumeProfile volumeProfile;
         [SerializeField] protected bool isEnabled = true;
 
-        protected Fog fog;
+        protected Fog2 fog;
         
         [Range(0,10)]
         [SerializeField] protected float fogDensity = 1.0f;
@@ -40,7 +40,7 @@ namespace PSX
         {
             if (!this.isEnabled) return; 
             if (this.volumeProfile == null) return;
-            if (this.fog == null) volumeProfile.TryGet<Fog>(out this.fog);
+            if (this.fog == null) volumeProfile.TryGet<Fog2>(out this.fog);
             if (this.fog == null) return;
             
             
