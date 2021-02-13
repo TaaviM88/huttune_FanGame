@@ -5,19 +5,8 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public List<ScriptableItem> items = new List<ScriptableItem>();
+    [SerializeField]
     private int currentItemListIndex = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void AddItem(ScriptableItem item)
     {
@@ -45,23 +34,24 @@ public class PlayerInventory : MonoBehaviour
         {
             return null;
         }
+
         currentItemListIndex += i;
+
         //jos meinataan mennä yli niin palautetaan ensimmäinen
-      if (items.Count >= currentItemListIndex-1)
-      {
+        if (currentItemListIndex > items.Count-1  )
+        {
             currentItemListIndex = 0;
-        return items[0];
-      }
-      //jos meinaa mennä miinuksen puolelle palautetaan listan viimeinen
-      else if(currentItemListIndex < 0)
+            return items[0];
+        }
+        //jos meinaa mennä miinuksen puolelle palautetaan listan viimeinen
+        if(currentItemListIndex < 0)
         {
             return items[items.Count - 1];
         }
-      //kaikissa muissa tapauksissa palautetaan ideksin kohdalta item
-        else
-        {
-            return items[currentItemListIndex];
-        }
+        //kaikissa muissa tapauksissa palautetaan ideksin kohdalta item
+        
+        return items[currentItemListIndex];
+        
     }
 
     

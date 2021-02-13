@@ -70,8 +70,8 @@ public class ItemInspect : MonoBehaviour
         currentlyEquippedItem = Instantiate(itemToInspectObj, Vector3.zero, Quaternion.identity);
 
         currentlyEquippedItem.transform.parent = ItemSlot;
-        currentlyEquippedItem.transform.localPosition = Vector3.zero;
-        currentlyEquippedItem.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        currentlyEquippedItem.transform.localPosition = itemToInspect.spawnPosition;
+        currentlyEquippedItem.transform.localRotation = Quaternion.Euler(itemToInspect.spawnRotation);
         //isHoldingItem = true;
         manager.isHoldingItem = true;
     }
@@ -133,10 +133,10 @@ public class ItemInspect : MonoBehaviour
 
         itemToInspectObj = Instantiate(itemToInspect.prefab, Vector3.zero, Quaternion.identity);
         itemToInspectObj.transform.parent = inspectNode;
-        itemToInspectObj.transform.localPosition = Vector3.zero;
-        itemToInspectObj.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        itemToInspectObj.transform.localPosition = itemToInspect.spawnPosition;
+        itemToInspectObj.transform.localRotation = Quaternion.Euler(itemToInspect.spawnRotation);
         itemToInspectObj.layer = 13;
-        inventory.RemoveItem(itemToInspect);
+        //inventory.RemoveItem(itemToInspect);
         Cursor.lockState = CursorLockMode.None;
 
         CenterTheObject();
@@ -160,7 +160,7 @@ public class ItemInspect : MonoBehaviour
     private void PutItemBackToInventory()
     {
         //laitetaan esine takaisin inventoryyn
-        inventory.AddItem(itemToInspect);
+        //inventory.AddItem(itemToInspect);
         itemToInspectObj.transform.parent = null;
         Destroy(itemToInspectObj.gameObject);
     }

@@ -16,3 +16,5 @@ MonoBehaviour:
   objName: Detergent
   description: Detergent
   prefab: {fileID: 7889810445275193868, guid: d6209d67eb4da19428b51eb436e0cde7, type: 3}
+  spawnRotation: {x: 0, y: 90, z: 0}
+  spawnPosition: {x: 0, y: 0, z: 0}

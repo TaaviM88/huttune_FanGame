@@ -6,7 +6,8 @@ public class ScriptableItem : ScriptableObject
     public string objName = "";
     public string description = "";
     public GameObject prefab = null;
-    
+    public Vector3 spawnRotation = Vector3.zero;
+    public Vector3 spawnPosition = Vector3.zero;
 
     public void RemoveFromInventory()
     {
