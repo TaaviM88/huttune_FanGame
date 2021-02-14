@@ -7,6 +7,9 @@ public class WashingMachineDoor : MonoBehaviour, IInteractable, ITryUseItem<Item
     public WashingMachineManager manager;
     WashMachineDoorState state = WashMachineDoorState.ClosedNoLoundry;
     public Item requiredItemToOpen;
+    public GameObject objDirtyLoundry;
+    public Transform dirtyLoundrySpawnPoint;
+
     bool doorClosed = true;
     bool laundryAdded = false;
     bool canChangeState = true;
@@ -100,11 +103,18 @@ public class WashingMachineDoor : MonoBehaviour, IInteractable, ITryUseItem<Item
         {
            if(requiredItemToOpen.scriptableItem.objName == usedItem.scriptableItem.objName && !laundryAdded)
             {
+
                 laundryAdded = true;
                 return true;
             }
         }
 
         return false;
+    }
+
+    public void SpawnLoundry()
+    {
+        GameObject loundryObj = Instantiate(objDirtyLoundry, dirtyLoundrySpawnPoint.position, Quaternion.identity);
+
     }
 }
