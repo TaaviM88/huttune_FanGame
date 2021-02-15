@@ -9,7 +9,7 @@ public class WashingMachineDoor : MonoBehaviour, IInteractable, ITryUseItem<Item
     public Item requiredItemToOpen;
     public GameObject objDirtyLoundry;
     public Transform dirtyLoundrySpawnPoint;
-
+    GameObject loundryObj = null;
     bool doorClosed = true;
     bool laundryAdded = false;
     bool canChangeState = true;
@@ -103,18 +103,28 @@ public class WashingMachineDoor : MonoBehaviour, IInteractable, ITryUseItem<Item
         {
            if(requiredItemToOpen.scriptableItem.objName == usedItem.scriptableItem.objName && !laundryAdded)
             {
-
+                SpawnLoundry();
                 laundryAdded = true;
                 return true;
             }
         }
-
+        
         return false;
     }
 
     public void SpawnLoundry()
     {
-        GameObject loundryObj = Instantiate(objDirtyLoundry, dirtyLoundrySpawnPoint.position, Quaternion.identity);
+        if(loundryObj != null)
+        {
 
+            loundryObj = Instantiate(objDirtyLoundry, dirtyLoundrySpawnPoint.position, Quaternion.identity);
+            loundryObj.transform.parent = dirtyLoundrySpawnPoint;
+            loundryObj.transform.localPosition = Vector3.zero;
+        }
+    }
+
+    public void DespawnLoundry()
+    {
+        Destroy(loundryObj);
     }
 }
