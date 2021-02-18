@@ -8,6 +8,10 @@ public class ScriptableItem : ScriptableObject
     public GameObject prefab = null;
     public Vector3 spawnRotation = Vector3.zero;
     public Vector3 spawnPosition = Vector3.zero;
+    public int useTimes = 1;
+    public bool infiniteUse = false;
+
+
 
     public void RemoveFromInventory()
     {

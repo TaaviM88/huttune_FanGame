@@ -73,8 +73,16 @@ public class PlayerRaycaster : MonoBehaviour
             //jos osuttiin objektiin jossa on iteractable-interface suoritetaan interact
             if(manager.isHoldingItem)
             {
-                hit.collider.gameObject.GetComponent<ITryUseItem<Item>>()?.TryItem(inspect.UseEquippedItem());
+             
+                if((bool)hit.collider.gameObject.GetComponent<ITryUseItem<Item>>()?.TryItem(inspect.UseEquippedItem()))
+                {
+
+                }
+                
+                
+                return;
             }
+
             hit.collider.gameObject.GetComponent<IInteractable>()?.Interact();
 
             if(hit.collider.gameObject.GetComponent<PuzzleController>() != null)

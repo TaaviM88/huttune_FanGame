@@ -174,11 +174,27 @@ public class ItemInspect : MonoBehaviour
     {
         if(manager.isHoldingItem)
         {
+
             return currentlyEquippedItem.GetComponent<Item>();
         }
         else
         {
             return null;
+        }
+    }
+
+    public void ItemUsed ()
+    {
+        if (currentlyEquippedItem.GetComponent<Item>().scriptableItem.infiniteUse)
+        {
+            return;
+        }
+
+        currentlyEquippedItem.GetComponent<Item>().scriptableItem.useTimes--;
+
+        if(currentlyEquippedItem.GetComponent<Item>().scriptableItem.useTimes <= 0)
+        {
+                      
         }
     }
 }
