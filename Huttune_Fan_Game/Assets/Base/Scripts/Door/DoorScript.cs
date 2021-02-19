@@ -20,7 +20,7 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     public AudioClip audioDoorLocked;
     public AudioClip audioUnlock;
     bool isMoving = false;
-
+    bool isFirstRun = true;
     
     // Start is called before the first frame update
     void Start()
@@ -66,23 +66,44 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     }
 
 
+    public void IsFirstRun()
+    {
+        isFirstRun = false;
+    }
+
     public void PlayAudioDoorCloseSqueak()
     {
+        if(isFirstRun)
+        {
+            return;
+        }
         audioSource.PlayOneShot(audioDoorCloseSqueak);
     }
 
     public void PlayAudioDoorCloseSlam()
     {
+        if (isFirstRun)
+        {
+            return;
+        }
         audioSource.PlayOneShot(audioDoorCloseSlam);
     }
 
     public void PlayAudioDoorLocked()
     {
+        if (isFirstRun)
+        {
+            return;
+        }
         audioSource.PlayOneShot(audioDoorLocked);
     }
 
     public void PlayAudioDoorUnlocked()
     {
+        if (isFirstRun)
+        {
+            return;
+        }
         audioSource.PlayOneShot(audioUnlock);
     }
 
