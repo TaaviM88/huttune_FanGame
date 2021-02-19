@@ -194,7 +194,7 @@ public class ItemInspect : MonoBehaviour
 
         if(currentlyEquippedItem.GetComponent<Item>().scriptableItem.useTimes <= 0)
         {
-                      
+            
         }
     }
 }

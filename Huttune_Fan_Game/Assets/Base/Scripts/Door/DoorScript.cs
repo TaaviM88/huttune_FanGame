@@ -12,6 +12,11 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     public string hintIfDoorIsLocked = "";
     public Item requiredItemToOpen;
     public int id = 0;
+    AudioSource audioSource;
+    public AudioClip audioHandleClank;
+    public AudioClip audioDoorOpenSqueak;
+    public AudioClip audioDoorCloseSqueak;
+    public AudioClip audioDoorCloseSlam;
     bool isMoving = false;
 
     
@@ -23,6 +28,8 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
         {
             CombineLockController.CheckIfPuzzleIsSolve += CheckResults;
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void CheckResults(int idPuzzle, bool isSolved)
@@ -45,6 +52,28 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     {
         //print("Is unlocked" + puzzlelockController.openLock);
     }
+
+    public void PlayAudioDoorHandleClank()
+    {
+        audioSource.PlayOneShot(audioHandleClank);
+    }
+
+    public void PlayAudioDoorOpenSqueak()
+    {
+        audioSource.PlayOneShot(audioDoorOpenSqueak);
+    }
+
+
+    public void PlayAudioDoorCloseSqueak()
+    {
+        audioSource.PlayOneShot(audioDoorCloseSqueak);
+    }
+
+    public void PlayAudioDoorCloseSlam()
+    {
+        audioSource.PlayOneShot(audioDoorCloseSlam);
+    }
+
 
     public bool TryItem(Item usedItem)
     {
