@@ -221,6 +221,8 @@ MonoBehaviour:
   audioDoorOpenSqueak: {fileID: 0}
   audioDoorCloseSqueak: {fileID: 0}
   audioDoorCloseSlam: {fileID: 0}
+  audioDoorLocked: {fileID: 0}
+  audioUnlock: {fileID: 0}
 --- !u!1 &1892274820693648948
 GameObject:
   m_ObjectHideFlags: 0

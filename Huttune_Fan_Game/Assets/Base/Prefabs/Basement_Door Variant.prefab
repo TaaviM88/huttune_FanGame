@@ -33,10 +33,13 @@ MonoBehaviour:
   requiredItemToOpen: {fileID: 300541632, guid: 75edcc618c6944d419822b12293bf03b,
     type: 3}
   id: 0
-  audioHandleClank: {fileID: 0}
-  audioDoorOpenSqueak: {fileID: 0}
-  audioDoorCloseSqueak: {fileID: 0}
-  audioDoorCloseSlam: {fileID: 0}
+  audioHandleClank: {fileID: 8300000, guid: 5742377172e8ad24eb5109bb5e157a4c, type: 3}
+  audioDoorOpenSqueak: {fileID: 8300000, guid: 26bfbc08b12e06b45ac2a0c10a8f790f, type: 3}
+  audioDoorCloseSqueak: {fileID: 8300000, guid: 26bfbc08b12e06b45ac2a0c10a8f790f,
+    type: 3}
+  audioDoorCloseSlam: {fileID: 8300000, guid: 58cdc861bc8c93e4db1b54cb6757e1a7, type: 3}
+  audioDoorLocked: {fileID: 8300000, guid: b47452e5519f6f34f99cf9e18b1e666e, type: 3}
+  audioUnlock: {fileID: 8300000, guid: ba1ffbf92e18780449289e7cad677c90, type: 3}
 --- !u!1001 &9013126583313782306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,6 +47,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 225870835548198362, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1fe0a779b3ab4c4ebf52a8c8fb1599c, type: 2}
     - target: {fileID: 1178660760177765540, guid: 33705cf9b5462dc4299072e1acccdc0c,
         type: 3}
       propertyPath: m_LocalPosition.x
