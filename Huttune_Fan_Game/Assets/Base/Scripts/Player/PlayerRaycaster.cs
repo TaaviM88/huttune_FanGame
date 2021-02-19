@@ -76,10 +76,8 @@ public class PlayerRaycaster : MonoBehaviour
              
                 if((bool)hit.collider.gameObject.GetComponent<ITryUseItem<Item>>()?.TryItem(inspect.UseEquippedItem()))
                 {   
-                   inspect.ItemUsed();
-      
+                   inspect.ItemUsed();      
                 }
-
 
                 return;
             }

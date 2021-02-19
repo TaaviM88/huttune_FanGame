@@ -183,20 +183,25 @@ public class ItemInspect : MonoBehaviour
         }
     }
 
-    public bool ItemUsed ()
+    public void ItemUsed ()
     {
         if (currentlyEquippedItem.GetComponent<Item>().scriptableItem.infiniteUse)
         {
-            return false;
+            return;
         }
 
         currentlyEquippedItem.GetComponent<Item>().scriptableItem.useTimes--;
 
         if(currentlyEquippedItem.GetComponent<Item>().scriptableItem.useTimes <= 0)
         {
-            return true;
+            inventory.RemoveItem(itemToInspect);  
+            UnEquipItem();
+            if (inventory.GetFirstItem() == null)
+            {
+                ToggleInspectMode();
+            }
+
         }
 
-        return false;
     }
 }
