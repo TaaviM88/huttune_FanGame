@@ -55,6 +55,11 @@ public class ItemInspect : MonoBehaviour
             {
                 UnEquipItem();
             }
+
+            if(Input.GetKeyDown(KeyCode.G))
+            {
+                DropItem();
+            }
         }
 
         //print(isHoldingItem);
@@ -168,6 +173,17 @@ public class ItemInspect : MonoBehaviour
     private void DropItem()
     {
         //pudotetaan esine maahan
+        if (itemToInspect == null)
+        {
+            return;
+        }
+
+        GameObject dropItem = Instantiate(itemToInspect.prefab,transform.position,Quaternion.identity);
+        UnEquipItem();
+        inventory.RemoveItem(itemToInspect);
+        InspectNextItem(1);
+
+
     }
 
     public Item UseEquippedItem()
