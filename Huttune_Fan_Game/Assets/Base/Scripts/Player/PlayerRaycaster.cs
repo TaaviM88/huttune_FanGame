@@ -76,12 +76,10 @@ public class PlayerRaycaster : MonoBehaviour
              
                 if((bool)hit.collider.gameObject.GetComponent<ITryUseItem<Item>>()?.TryItem(inspect.UseEquippedItem()))
                 {   
-                    print("Käytin esineen");
+                   inspect.ItemUsed();
+      
                 }
-                else
-                {
-                    print("väärä esine");
-                }
+
 
                 return;
             }

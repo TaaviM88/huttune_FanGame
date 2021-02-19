@@ -17,6 +17,8 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     public AudioClip audioDoorOpenSqueak;
     public AudioClip audioDoorCloseSqueak;
     public AudioClip audioDoorCloseSlam;
+    public AudioClip audioDoorLocked;
+    public AudioClip audioUnlock;
     bool isMoving = false;
 
     
@@ -74,6 +76,15 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
         audioSource.PlayOneShot(audioDoorCloseSlam);
     }
 
+    public void PlayAudioDoorLocked()
+    {
+        audioSource.PlayOneShot(audioDoorLocked);
+    }
+
+    public void PlayAudioDoorUnlocked()
+    {
+        audioSource.PlayOneShot(audioUnlock);
+    }
 
     public bool TryItem(Item usedItem)
     {

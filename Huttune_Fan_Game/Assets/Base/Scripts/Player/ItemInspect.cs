@@ -183,18 +183,20 @@ public class ItemInspect : MonoBehaviour
         }
     }
 
-    public void ItemUsed ()
+    public bool ItemUsed ()
     {
         if (currentlyEquippedItem.GetComponent<Item>().scriptableItem.infiniteUse)
         {
-            return;
+            return false;
         }
 
         currentlyEquippedItem.GetComponent<Item>().scriptableItem.useTimes--;
 
         if(currentlyEquippedItem.GetComponent<Item>().scriptableItem.useTimes <= 0)
         {
-            
+            return true;
         }
+
+        return false;
     }
 }
