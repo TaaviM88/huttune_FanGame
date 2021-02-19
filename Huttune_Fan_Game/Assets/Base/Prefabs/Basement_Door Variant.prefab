@@ -27,10 +27,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   doorState: 2
+  lockType: 0
   description: 
   hintIfDoorIsLocked: 'Door is locked. '
   requiredItemToOpen: {fileID: 300541632, guid: 75edcc618c6944d419822b12293bf03b,
     type: 3}
+  id: 0
+  audioHandleClank: {fileID: 0}
+  audioDoorOpenSqueak: {fileID: 0}
+  audioDoorCloseSqueak: {fileID: 0}
+  audioDoorCloseSlam: {fileID: 0}
 --- !u!1001 &9013126583313782306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96,9 +102,10 @@ PrefabInstance:
     - target: {fileID: 1950235779941152286, guid: 33705cf9b5462dc4299072e1acccdc0c,
         type: 3}
       propertyPath: m_Name
-      value: Basement_Door
+      value: Basement_Door Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6169246608228185243, guid: 33705cf9b5462dc4299072e1acccdc0c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33705cf9b5462dc4299072e1acccdc0c, type: 3}
 --- !u!1 &8848649447961628544 stripped
 GameObject:
