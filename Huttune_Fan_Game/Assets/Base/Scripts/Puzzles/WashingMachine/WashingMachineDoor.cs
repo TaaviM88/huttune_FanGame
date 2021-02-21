@@ -114,9 +114,8 @@ public class WashingMachineDoor : MonoBehaviour, IInteractable, ITryUseItem<Item
 
     public void SpawnLoundry()
     {
-        if(loundryObj != null)
+        if(loundryObj == null)
         {
-
             loundryObj = Instantiate(objDirtyLoundry, dirtyLoundrySpawnPoint.position, Quaternion.identity);
             loundryObj.transform.parent = dirtyLoundrySpawnPoint;
             loundryObj.transform.localPosition = Vector3.zero;
