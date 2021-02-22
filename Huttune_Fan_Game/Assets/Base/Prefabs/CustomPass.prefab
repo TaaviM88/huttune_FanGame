@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3191407797110532411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3191407797110532409}
+  - component: {fileID: 3191407797110532408}
+  m_Layer: 0
+  m_Name: CustomPass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3191407797110532409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191407797110532411}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4228487, y: 0.68734694, z: -1.4296763}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3191407797110532408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191407797110532411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d6499a6bd256e47b859377446493a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  fadeRadius: 0
+  priority: 0
+  customPasses:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  injectionPoint: 1
+  references:
+    version: 1
+    00000000:
+      type: {class: FullScreenCustomPass, ns: UnityEngine.Rendering.HighDefinition,
+        asm: Unity.RenderPipelines.HighDefinition.Runtime}
+      data:
+        m_Name: Custom Pass
+        enabled: 1
+        targetColorBuffer: 2
+        targetDepthBuffer: 1
+        clearFlags: 2
+        passFoldout: 0
+        m_Version: 0
+        fullscreenPassMaterial: {fileID: 2100000, guid: 1074a42b599de1a45b205f2580962152,
+          type: 2}
+        materialPassIndex: 0
+        materialPassName: Custom Pass 0
+        fetchColorBuffer: 0
+    00000001:
+      type: {class: DrawRenderersCustomPass, ns: UnityEngine.Rendering.HighDefinition,
+        asm: Unity.RenderPipelines.HighDefinition.Runtime}
+      data:
+        m_Name: Custom Pass
+        enabled: 1
+        targetColorBuffer: 2
+        targetDepthBuffer: 1
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+        filterFoldout: 1
+        rendererFoldout: 1
+        renderQueueType: 10
+        layerMask:
+          serializedVersion: 2
+          m_Bits: 16384
+        sortingCriteria: 4
+        overrideMaterial: {fileID: 2100000, guid: cbc01aa468e63ea4f858ff893893ba03,
+          type: 2}
+        overrideMaterialPassIndex: 0
+        overrideMaterialPassName: DepthOnly
+        overrideDepthState: 1
+        depthCompareFunction: 7
+        depthWrite: 1
+        shaderPass: 0
+    00000002:
+      type: {class: Fur, ns: , asm: NewAssembly}
+      data:
+        m_Name: Custom Pass
+        enabled: 0
+        targetColorBuffer: 0
+        targetDepthBuffer: 0
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+        furMask:
+          serializedVersion: 2
+          m_Bits: 16384
+        furMesh: {fileID: 0}
+        furMaterial: {fileID: 2100000, guid: 456ed3a4e47d06342b274ecc3367cd31, type: 2}
+    00000003:
+      type: {class: Outline, ns: , asm: NewAssembly}
+      data:
+        m_Name: Custom Pass
+        enabled: 1
+        targetColorBuffer: 2
+        targetDepthBuffer: 1
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+        outlineLayer:
+          serializedVersion: 2
+          m_Bits: 32768
+        outlineColor: {r: 5.929412, g: 5.992157, b: 0, a: 1}
+        threshold: 1
+        outlineShader: {fileID: 4800000, guid: 67b51d016f2a4974d92bcd1779197183, type: 3}
+    00000004:
+      type: {class: SeeThrough, ns: , asm: NewAssembly}
+      data:
+        m_Name: Custom Pass
+        enabled: 0
+        targetColorBuffer: 2
+        targetDepthBuffer: 1
+        clearFlags: 0
+        passFoldout: 0
+        m_Version: 0
+        seeThroughLayer:
+          serializedVersion: 2
+          m_Bits: 0
+        seeThroughMaterial: {fileID: 2100000, guid: c36551f778de7ac4cb9ae98ccbdb462b,
+          type: 2}
+        stencilShader: {fileID: 4800000, guid: cbfa2cf05d9f26743a3c8bfeffec3eea, type: 3}

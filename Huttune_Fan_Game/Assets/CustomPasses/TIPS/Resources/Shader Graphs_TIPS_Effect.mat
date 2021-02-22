@@ -74,7 +74,7 @@ Material:
     - _DstBlend: 10
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 1
-    - _Intensity: 8.333333
+    - _Intensity: 4.4444447
     - _OpaqueCullMode: 2
     - _ReceivesSSR: 0
     - _ReceivesSSRTransparent: 0
