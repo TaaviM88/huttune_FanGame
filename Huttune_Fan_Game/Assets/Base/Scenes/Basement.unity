@@ -7575,6 +7575,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pliers
       objectReference: {fileID: 0}
+    - target: {fileID: 3045361054086881167, guid: 2b97e17591ebf7445ac92e64720d1133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489285540045282505, guid: 2b97e17591ebf7445ac92e64720d1133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031194119378208161, guid: 2b97e17591ebf7445ac92e64720d1133,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b97e17591ebf7445ac92e64720d1133, type: 3}
 --- !u!1001 &426408980
@@ -26869,6 +26884,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 332234888, guid: 9cd84dbc7c72556458318e09df51bf95, type: 3}
+      propertyPath: normal.m_Bits
+      value: 235319
+      objectReference: {fileID: 0}
     - target: {fileID: 2738907660203545672, guid: 9cd84dbc7c72556458318e09df51bf95,
         type: 3}
       propertyPath: m_RootOrder
