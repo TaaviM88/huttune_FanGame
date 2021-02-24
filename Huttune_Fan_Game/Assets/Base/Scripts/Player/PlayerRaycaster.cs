@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class PlayerRaycaster : MonoBehaviour
     PlayerManager manager;
     PlayerInventory inventory;
     ItemInspect inspect;
+    Item itemOutline = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,20 @@ public class PlayerRaycaster : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             ProcessRayCast();
+        }
+        else
+        ProcessItemOutline();
+    }
+
+    private void ProcessItemOutline()
+    {
+        RaycastHit hit;
+
+       if ( Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range, 15))
+        {
+            itemOutline = hit.collider.gameObject.GetComponent<Item>();
+
+            itemOutline?.SetOutlineLayerOn();
         }
 
     }

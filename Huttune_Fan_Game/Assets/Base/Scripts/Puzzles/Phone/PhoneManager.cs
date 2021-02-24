@@ -10,6 +10,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
     public WashingMachineManager wmManager;
     Animator anime;
     bool answerOn = false;
+    public int selectedHightlightLayer = 15;
     public List<int> correctSequence = new List<int>();
     public List<int> pressedSequance = new List<int>();
     //public int[] correctSequence = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
@@ -19,6 +20,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
     [SerializeField]
     int currentCursorIndex = 1;
     int pNumberIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -132,11 +134,12 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
 
     private void ButtonHandler(float index)
     {
-
-        if(currentCursorIndex +index < buttons.Count && currentCursorIndex + index >= 0)
+        buttons[currentCursorIndex].gameObject.layer = 0;
+        if (currentCursorIndex +index < buttons.Count && currentCursorIndex + index >= 0)
         {
             currentCursorIndex += (int)index;
             MovePointer(buttons[currentCursorIndex].GetChild(0).localPosition);
+            buttons[currentCursorIndex].gameObject.layer = selectedHightlightLayer;
         }
         else
         {
@@ -144,11 +147,13 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
             {
                 currentCursorIndex = buttons.Count -1;
                 MovePointer(buttons[currentCursorIndex].GetChild(0).localPosition);
+                buttons[currentCursorIndex].gameObject.layer = selectedHightlightLayer;
             }
             else
             {
                 currentCursorIndex = 0;
                 MovePointer(buttons[currentCursorIndex].GetChild(0).localPosition);
+                buttons[currentCursorIndex].gameObject.layer = selectedHightlightLayer;
             }
             
         }

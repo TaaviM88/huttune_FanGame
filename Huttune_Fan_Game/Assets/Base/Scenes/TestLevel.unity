@@ -510,7 +510,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-37118
+  m_Name: pb_Mesh-5144
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1223,6 +1223,10 @@ PrefabInstance:
     - target: {fileID: 160111782, guid: 9cd84dbc7c72556458318e09df51bf95, type: 3}
       propertyPath: m_Intensity
       value: 868.6165
+      objectReference: {fileID: 0}
+    - target: {fileID: 225235284, guid: 9cd84dbc7c72556458318e09df51bf95, type: 3}
+      propertyPath: mask.m_Bits
+      value: 40753
       objectReference: {fileID: 0}
     - target: {fileID: 332234888, guid: 9cd84dbc7c72556458318e09df51bf95, type: 3}
       propertyPath: normal.m_Bits
@@ -3418,6 +3422,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 215352639, guid: a178305522e591c4ba0d2a88320b5b2e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1460.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 215352639, guid: a178305522e591c4ba0d2a88320b5b2e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 207.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 215352639, guid: a178305522e591c4ba0d2a88320b5b2e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00097656
+      objectReference: {fileID: 0}
+    - target: {fileID: 215352639, guid: a178305522e591c4ba0d2a88320b5b2e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.6831
+      objectReference: {fileID: 0}
+    - target: {fileID: 215352640, guid: a178305522e591c4ba0d2a88320b5b2e, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 215352640, guid: a178305522e591c4ba0d2a88320b5b2e, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 264283879, guid: a178305522e591c4ba0d2a88320b5b2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3694,6 +3722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptableItem: {fileID: 11400000, guid: 87f8ae59c5c2ba0479af68d2fa47001f, type: 2}
+  howLongOutlineLast: 2
 --- !u!4 &743911846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3119308079644534864, guid: 8850d132797ff49298ba781e8e1c9bfe,
@@ -4616,7 +4645,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-37104
+  m_Name: pb_Mesh-5130
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8556,7 +8585,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-37090
+  m_Name: pb_Mesh-5116
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10126,6 +10155,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5617083609478481743, guid: d6209d67eb4da19428b51eb436e0cde7,
+        type: 3}
+      propertyPath: outLineLayer.m_Bits
+      value: 32768
+      objectReference: {fileID: 0}
     - target: {fileID: 7365052666411169974, guid: d6209d67eb4da19428b51eb436e0cde7,
         type: 3}
       propertyPath: m_RootOrder

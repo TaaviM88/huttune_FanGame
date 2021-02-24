@@ -7,6 +7,28 @@ using System.Collections.Generic;
 public class Item : MonoBehaviour
 {
     public ScriptableItem scriptableItem;
+    int outlineLayer = 15;
+    int originalLayer;
+    bool isOutlineLayerOn = false;
+    public float howLongOutlineLast = 2; 
+    float cooldownTimer;
+    private void Start()
+    {
+        originalLayer = gameObject.layer;
+    }
+
+    private void Update()
+    {
+        if(isOutlineLayerOn)
+        {
+            cooldownTimer -= Time.deltaTime;
+
+            if(cooldownTimer < 0)
+            {
+                TurnOutlineOff();
+            }
+        }
+    }
 
     public void Use()
     {
@@ -20,7 +42,33 @@ public class Item : MonoBehaviour
 
    public void PickUpItem()
     {
-        print($"You got {scriptableItem.objName}");
+        //print($"You got {scriptableItem.objName}");
+        Journal.Instance?.Log($"You got {scriptableItem.objName}");
         Destroy(gameObject);
+    }
+
+    public void SetOutlineLayerOn()
+    {
+        cooldownTimer = howLongOutlineLast;
+        if(isOutlineLayerOn)
+        {
+            return;
+        }
+
+        gameObject.layer = outlineLayer;
+        isOutlineLayerOn = true;
+    }
+
+    public void TurnOutlineOff()
+    {
+        
+        if(!isOutlineLayerOn)
+        {
+            print("fukkk");
+            return;
+        }
+
+        gameObject.layer = originalLayer;
+        isOutlineLayerOn = false;
     }
 }

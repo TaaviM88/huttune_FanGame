@@ -8,6 +8,7 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
     public static event Action<int, int[]> UpdateHint = delegate { };
     public List<CombineWheelRotation> wheels = new List<CombineWheelRotation>();
     public int id = 0;
+    public int outlineLayer = 15;
     public bool randomizeAnswer = false;
     private int[] results;
     public int[] correctCombination;
@@ -76,6 +77,7 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
 
     private void ChangeWheel(float horizontal)
     {
+        wheels[currentWheelIndex].gameObject.layer = 0;
         if (canMoveNextWheel && horizontal != 0)
         {
             if(horizontal > 0)
@@ -105,6 +107,8 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
         {
             canMoveNextWheel = true;
         }
+
+        wheels[currentWheelIndex].gameObject.layer = outlineLayer;
     }
 
     private void RandomizeCorrectAnswer()
