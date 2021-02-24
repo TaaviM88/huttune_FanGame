@@ -5920,6 +5920,50 @@ Transform:
   m_Father: {fileID: 1556802278}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &359596704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8875490746176001370, guid: 1dc5296e9c08fea42b1e6fde00c2ea28,
+    type: 3}
+  m_PrefabInstance: {fileID: 1349515994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &359596709
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359596704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.29950002, y: 0.69799995, z: 0.018}
+  m_Center: {x: 0.14975001, y: 0.34899998, z: 0.009}
+--- !u!114 &359596710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359596704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e37f9096972e04988cce1c298f5f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLocked: 0
+  doorState: 0
+  lockType: 0
+  description: 
+  hintIfDoorIsLocked: 
+  requiredItemToOpen: {fileID: 0}
+  id: 37
+  audioHandleClank: {fileID: 0}
+  audioDoorOpenSqueak: {fileID: 0}
+  audioDoorCloseSqueak: {fileID: 0}
+  audioDoorCloseSlam: {fileID: 0}
+  audioDoorLocked: {fileID: 0}
+  audioUnlock: {fileID: 0}
 --- !u!1001 &362113650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7574,21 +7618,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pliers
-      objectReference: {fileID: 0}
-    - target: {fileID: 3045361054086881167, guid: 2b97e17591ebf7445ac92e64720d1133,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5489285540045282505, guid: 2b97e17591ebf7445ac92e64720d1133,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031194119378208161, guid: 2b97e17591ebf7445ac92e64720d1133,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b97e17591ebf7445ac92e64720d1133, type: 3}
@@ -13329,6 +13358,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3191407797110532408, guid: 5475bdec15d79264eb1194597cd8d51e,
+        type: 3}
+      propertyPath: customPasses.Array.data[3].threshold
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191407797110532408, guid: 5475bdec15d79264eb1194597cd8d51e,
+        type: 3}
+      propertyPath: customPasses.Array.data[1].layerMask.m_Bits
+      value: 65536
+      objectReference: {fileID: 0}
     - target: {fileID: 3191407797110532409, guid: 5475bdec15d79264eb1194597cd8d51e,
         type: 3}
       propertyPath: m_RootOrder
@@ -26884,10 +26923,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 332234888, guid: 9cd84dbc7c72556458318e09df51bf95, type: 3}
-      propertyPath: normal.m_Bits
-      value: 235319
-      objectReference: {fileID: 0}
     - target: {fileID: 2738907660203545672, guid: 9cd84dbc7c72556458318e09df51bf95,
         type: 3}
       propertyPath: m_RootOrder

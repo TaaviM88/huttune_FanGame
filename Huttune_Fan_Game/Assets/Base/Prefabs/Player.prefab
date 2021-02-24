@@ -441,7 +441,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 24375
+    m_Bits: 253751
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -576,7 +576,7 @@ MonoBehaviour:
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
-    m_Bits: 24375
+    m_Bits: 7991
   volumeAnchorOverride: {fileID: 0}
   antialiasing: 1
   SMAAQuality: 2
@@ -840,7 +840,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   normal:
     serializedVersion: 2
-    m_Bits: 5943
+    m_Bits: 235319
 --- !u!114 &1175625243
 MonoBehaviour:
   m_ObjectHideFlags: 0
