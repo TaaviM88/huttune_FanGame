@@ -19,6 +19,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
     bool canMoveNextButton = true;
     [SerializeField]
     int currentCursorIndex = 1;
+    int originalCursorIndex;
     int pNumberIndex = 0;
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
                 buttons.Add(child);
             }
         }
+        originalCursorIndex = currentCursorIndex;
     }
 
     // Update is called once per frame
@@ -205,7 +207,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
             answerOn = false;
             buttons[currentCursorIndex].gameObject.layer = 0;
             pNumberIndex = 0;
-            currentCursorIndex = 1;
+            currentCursorIndex = originalCursorIndex;
 
             for (int i = 0; i <pressedSequance.Count; i++)
             {
