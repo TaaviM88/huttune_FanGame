@@ -71,7 +71,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
        pressedSequance.Add(buttons[currentCursorIndex].GetComponent<PhoneButton>().GetNumber());
         if(currentCursorIndex < 10)
         {
-            anime.SetTrigger($"Button_{currentCursorIndex}");
+            anime.SetTrigger($"Button_{currentCursorIndex-1}");
         }
        
         if(currentCursorIndex == 10)
