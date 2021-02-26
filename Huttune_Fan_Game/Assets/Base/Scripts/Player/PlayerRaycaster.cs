@@ -77,6 +77,7 @@ public class PlayerRaycaster : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range, mask))
         {
+            //print(hit.collider.gameObject.name);
             //Jos osutaan itemiin niin poimitaan se ja lopetetaan raycast
             Item item = hit.collider.gameObject.GetComponent<Item>();
             
