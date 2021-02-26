@@ -203,6 +203,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
         {
             BoolAnimation(false);
             answerOn = false;
+            buttons[currentCursorIndex].gameObject.layer = 0;
             pNumberIndex = 0;
             currentCursorIndex = 1;
 
@@ -221,6 +222,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
         {
             BoolAnimation(true);
             answerOn = true;
+            buttons[currentCursorIndex].gameObject.layer = selectedHightlightLayer;
         }
     }
 
