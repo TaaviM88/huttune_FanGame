@@ -69,7 +69,20 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
     private void PressButton()
     {
        pressedSequance.Add(buttons[currentCursorIndex].GetComponent<PhoneButton>().GetNumber());
-       anime.SetTrigger($"Button_{currentCursorIndex}");
+        if(currentCursorIndex < 10)
+        {
+            anime.SetTrigger($"Button_{currentCursorIndex}");
+        }
+       
+        if(currentCursorIndex == 10)
+        {
+            anime.SetTrigger($"Button_Star");
+        }
+
+        if(currentCursorIndex == 11)
+        {
+            anime.SetTrigger($"Button_Hash");
+        }
        CheckIfCorrectSequance();
     }
 
@@ -102,7 +115,6 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
             }
             else
             {
-
                 return;
             }
            
@@ -135,6 +147,7 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
     private void ButtonHandler(float index)
     {
         buttons[currentCursorIndex].gameObject.layer = 0;
+
         if (currentCursorIndex +index < buttons.Count && currentCursorIndex + index >= 0)
         {
             currentCursorIndex += (int)index;
