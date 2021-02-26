@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7081554041831976607}
   - component: {fileID: 7882350568604797887}
   - component: {fileID: 396890531647348126}
+  - component: {fileID: 3935806534620165798}
   m_Layer: 0
-  m_Name: Paper3
+  m_Name: Recipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,6 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,3 +81,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3935806534620165798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3454234103976070879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd18404cb8861c44faa66169d61ddcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptableItem: {fileID: 11400000, guid: 7429d2c5b4ed37c4b951548fc77492e7, type: 2}
+  howLongOutlineLast: 2

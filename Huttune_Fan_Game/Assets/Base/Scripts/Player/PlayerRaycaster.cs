@@ -79,6 +79,7 @@ public class PlayerRaycaster : MonoBehaviour
         {
             //Jos osutaan itemiin niin poimitaan se ja lopetetaan raycast
             Item item = hit.collider.gameObject.GetComponent<Item>();
+            
             if (item != null)
             {
                 inventory.AddItem(item.scriptableItem);

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6866475422568422695}
   - component: {fileID: 8380714328034565230}
   - component: {fileID: 7188768509056374719}
+  - component: {fileID: 4535595842250461575}
   m_Layer: 0
   m_Name: 2_Billiard_Ball
   m_TagString: Untagged
@@ -56,6 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -80,6 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &7188768509056374719
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -93,3 +96,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.020000003
   m_Center: {x: 0, y: 0.0000000027939677, z: 9.313226e-10}
+--- !u!114 &4535595842250461575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4980582173850317782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd18404cb8861c44faa66169d61ddcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptableItem: {fileID: 11400000, guid: 3672f87f8a83fe14dbe84afbc2d84d57, type: 2}
+  howLongOutlineLast: 2

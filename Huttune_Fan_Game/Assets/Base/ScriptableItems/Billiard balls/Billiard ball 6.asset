@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afa0eb7244877d4dad93fefdff25f49, type: 3}
+  m_Name: Billiard ball 6
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  objName: billiard ball 6
+  description: 
+  prefab: {fileID: 9221817070793410620, guid: d331d0222f42b954e8916150bba73d75, type: 3}
+  spawnRotation: {x: 0, y: 0, z: 0}
+  spawnPosition: {x: 0, y: 0, z: 0}
+  useTimes: 1
+  infiniteUse: 0

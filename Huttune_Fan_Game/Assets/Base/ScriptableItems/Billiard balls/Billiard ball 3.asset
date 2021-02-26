@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4afa0eb7244877d4dad93fefdff25f49, type: 3}
-  m_Name: DetergentKeyItem
+  m_Name: Billiard ball 3
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  objName: Detergent
-  description: Detergent
-  prefab: {fileID: 7889810445275193868, guid: d6209d67eb4da19428b51eb436e0cde7, type: 3}
-  spawnRotation: {x: 0, y: 90, z: 0}
+  objName: billiard ball 3
+  description: 
+  prefab: {fileID: 6668449554055845015, guid: da4d1c419746f614a847b14dd182176d, type: 3}
+  spawnRotation: {x: 0, y: 0, z: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
+  useTimes: 1
+  infiniteUse: 0
