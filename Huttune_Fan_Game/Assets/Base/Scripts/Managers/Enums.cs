@@ -85,3 +85,32 @@ public enum WashMachineDoorState
     OpenLaundryAdded,
 }
 #endregion
+
+#region boogieMary
+public enum BoogieMaryStoryState
+{
+    Sleeping,
+    Wandering,
+    TurnOffLights,
+    Shower,
+    ShowerAttack,
+    Eating
+}
+public enum BoogieMaryMoveState
+{
+    None,
+    Wandering,
+    ChasingPlayer,
+    ChasingCheese,
+    MoveToTarget,
+
+}
+
+public enum BoogieMaryActionState
+{
+    None,
+    Attacking,
+    Looking,
+    OpeningDoor
+}
+#endregion
