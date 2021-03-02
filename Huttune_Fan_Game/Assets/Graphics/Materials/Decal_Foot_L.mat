@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Decal_Rust_Stain
+  m_Name: Decal_Foot_L
   m_Shader: {fileID: 4800000, guid: 1d64af84bdc970c4fae0c1e06dd95b73, type: 3}
   m_ShaderKeywords: _COLORMAP _DISABLE_SSR_TRANSPARENT _MASKMAP _MATERIAL_AFFECTS_ALBEDO
     _MATERIAL_AFFECTS_MASKMAP _MATERIAL_AFFECTS_NORMAL _NORMALMAP _NORMALMAP_TANGENT_SPACE
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 31ca7fc4b45849642b4e4a0b46964f1e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 728ede9a7a8d2cb4fa6a5486352723e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -90,11 +90,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: a5e9fe4c57d6b50448141a495678433d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 813ad8d7d0873a14ba092ac7474a57bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 49902c2b6d3699144a4fd3650ce94d62, type: 3}
+        m_Texture: {fileID: 2800000, guid: e7f9e2b42093f6c40bd30028d98fee00, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
@@ -165,7 +165,7 @@ Material:
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
-    - _DecalBlend: 1
+    - _DecalBlend: 0.5
     - _DecalColorMask0: 15
     - _DecalColorMask1: 15
     - _DecalColorMask2: 11
@@ -225,7 +225,7 @@ Material:
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
-    - _MaskBlendSrc: 0
+    - _MaskBlendSrc: 1
     - _MaterialID: 1
     - _Metallic: 0
     - _MetallicRemapMax: 1
@@ -244,7 +244,7 @@ Material:
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
     - _Smoothness: 0.5
-    - _SmoothnessRemapMax: 1
+    - _SmoothnessRemapMax: 0.46847317
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
@@ -286,7 +286,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.20754719, g: 0.035839096, b: 0.022516916, a: 1}
+    - _BaseColor: {r: 0.5882353, g: 0, b: 0, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
