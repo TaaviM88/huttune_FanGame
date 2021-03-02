@@ -283,11 +283,7 @@ GameObject:
   - component: {fileID: 5108627033474094086}
   - component: {fileID: 5108627033474094137}
   - component: {fileID: 5108627033474094084}
-<<<<<<< HEAD
   - component: {fileID: 680254381}
-=======
-  - component: {fileID: 7915169435693088558}
->>>>>>> 6bb551e175bf679a7edc5823476df014b8c550a9
   m_Layer: 0
   m_Name: PeepholeCamera
   m_TagString: Untagged
@@ -411,11 +407,7 @@ MonoBehaviour:
   maxYAngle: 10
   mouseX: 0
   mouseY: 0
-<<<<<<< HEAD
 --- !u!114 &680254381
-=======
---- !u!114 &7915169435693088558
->>>>>>> 6bb551e175bf679a7edc5823476df014b8c550a9
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -474,26 +466,16 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
-<<<<<<< HEAD
   clearColorMode: 1
-=======
-  clearColorMode: 0
->>>>>>> 6bb551e175bf679a7edc5823476df014b8c550a9
   backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   volumeAnchorOverride: {fileID: 0}
-<<<<<<< HEAD
   antialiasing: 1
   SMAAQuality: 2
   dithering: 1
-=======
-  antialiasing: 0
-  SMAAQuality: 2
-  dithering: 0
->>>>>>> 6bb551e175bf679a7edc5823476df014b8c550a9
   stopNaNs: 0
   taaSharpenStrength: 0.5
   TAAQuality: 1
@@ -574,60 +556,7 @@ Transform:
   - {fileID: 1726343862}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5108627033700450516
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108627033700450504}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5108627033700450519
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5108627033700450504}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
->>>>>>> 6bb551e175bf679a7edc5823476df014b8c550a9
 --- !u!65 &5108627033700450518
 BoxCollider:
   m_ObjectHideFlags: 0
