@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
 {
     Animator anime;
@@ -21,7 +21,7 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     public AudioClip audioUnlock;
     bool isMoving = false;
     bool isFirstRun = true;
-    
+    NavMeshObstacle navObs;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +32,21 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
         }
 
         audioSource = GetComponent<AudioSource>();
+        navObs = GetComponent<NavMeshObstacle>();
+
+        if(navObs != null)
+        {
+            if (isLocked)
+            {
+                navObs.carving = true;
+
+            }
+            else
+            {
+                navObs.carving = false;
+            }
+        }
+        
     }
 
     private void CheckResults(int idPuzzle, bool isSolved)
@@ -53,6 +68,19 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     void Update()
     {
         //print("Is unlocked" + puzzlelockController.openLock);
+
+        if (navObs != null)
+        {
+            if (isLocked)
+            {
+                navObs.carving = true;
+
+            }
+            else
+            {
+                navObs.carving = false;
+            }
+        }
     }
 
     public void PlayAudioDoorHandleClank()

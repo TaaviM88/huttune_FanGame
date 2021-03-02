@@ -8,8 +8,10 @@ public class BoogieMaryController : MonoBehaviour
 {
     NavMeshAgent agent;
     public Animator anime;
-
+    public Transform raycastStartPoint;
     public Transform playerLocation;
+    public float doorOpenRange = 1;
+    public float TripOverCooldown = 5;
     Transform lastknowLocation;
     Transform cheeseLocation;
     Vector3 target;
@@ -20,21 +22,62 @@ public class BoogieMaryController : MonoBehaviour
     bool canMove = true;
     bool isWalking = false;
     bool reachedTarget = false;
+    bool isTrippingTimerOn = false;
     public bool isSleepping = true;
 
+    float agentOriginalSpeed = 0;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
+        agentOriginalSpeed = agent.speed;
     }
 
-    public void Upadate()
+    public void Update()
     {
-        if(!canMove)
+        anime.SetFloat("MoveSpeed", agent.speed);
+
+        if (!canMove)
         {
             return;
         }
+
+        
+        
+
+        if(!isTrippingTimerOn)
+        {
+            StartCoroutine(TripOver());
+        }
+    }
+
+    IEnumerator TripOver()
+    {
+
+        print("Kokeillaan kaatuisko Mary");
+        bool tripOver = UnityEngine.Random.Range(0f, 1f) > 0.9;
+
+        if(tripOver)
+        {
+            canMove = false;
+            agent.speed = 0;
+            //anime.SetFloat("MoveSpeed", agent.speed);
+            anime.SetTrigger("BoogieMaryTrip");
+            agent.isStopped = true;
+        }
+
+        isTrippingTimerOn = true;
+        yield return new WaitForSeconds(TripOverCooldown);
+        
+        if(tripOver)
+        {
+            canMove = true;
+            agent.isStopped = false;
+            agent.speed = agentOriginalSpeed;
+        }
+
+        isTrippingTimerOn = false;
+
     }
 
     // Update is called once per frame
@@ -70,10 +113,20 @@ public class BoogieMaryController : MonoBehaviour
     private void ProcessRaycast()
     {
         RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 5))
-        { 
-                hit.collider.gameObject.GetComponent<IInteractable>()?.Interact();
+        if (Physics.Raycast(raycastStartPoint.position, transform.forward, out hit, doorOpenRange))
+        {
+            DoorScript door = hit.collider.gameObject.GetComponent<DoorScript>();
+            if(door != null)
+            {
+                if(door.isLocked)
+                {
+                    return;
+                }
+                else
+                {
+                    door.Interact();
+                }
+            }
                 
         }
 
@@ -85,11 +138,23 @@ public class BoogieMaryController : MonoBehaviour
         agent.SetDestination(newtarget);
         transform.LookAt(newtarget, Vector3.up);
 
-        if (agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance <= agent.stoppingDistance)
+        if (agent.remainingDistance <= agent.stoppingDistance)
         {
             print("Perillä");
             reachedTarget = true;
+            agent.isStopped = true;
+            //agent.speed = agentOriginalSpeed;
         }
+        else
+        {
+            print("Ei perillä");
+            if (agent.isStopped)
+            {
+                //agent.speed = agentOriginalSpeed;
+                agent.isStopped = false;
+            }
+        }
+        
     }
 
     public void Attack()

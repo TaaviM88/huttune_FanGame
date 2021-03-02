@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 225870835548198362}
   - component: {fileID: 3491788615370716996}
   - component: {fileID: 6169246608228185243}
+  - component: {fileID: 4829107609448308362}
   m_Layer: 0
   m_Name: Basement_Door
   m_TagString: Untagged
@@ -225,6 +226,22 @@ MonoBehaviour:
   audioDoorCloseSlam: {fileID: 0}
   audioDoorLocked: {fileID: 0}
   audioUnlock: {fileID: 0}
+--- !u!208 &4829107609448308362
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565686731642886562}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.068, y: 1.19, z: 0.49}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.2, z: 0.5}
+  m_TimeToStationary: 0.5
 --- !u!1 &1892274820693648948
 GameObject:
   m_ObjectHideFlags: 0
