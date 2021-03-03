@@ -25,7 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e37f9096972e04988cce1c298f5f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   doorState: 2
   lockType: 0
   description: 
@@ -33,7 +33,7 @@ MonoBehaviour:
   requiredItemToOpen: {fileID: 300541632, guid: 75edcc618c6944d419822b12293bf03b,
     type: 3}
   id: 0
-  audioHandleClank: {fileID: 8300000, guid: 5742377172e8ad24eb5109bb5e157a4c, type: 3}
+  audioHandleClank: {fileID: 8300000, guid: 940e56d230251b14b8536531c6198578, type: 3}
   audioDoorOpenSqueak: {fileID: 8300000, guid: 26bfbc08b12e06b45ac2a0c10a8f790f, type: 3}
   audioDoorCloseSqueak: {fileID: 8300000, guid: 26bfbc08b12e06b45ac2a0c10a8f790f,
     type: 3}
@@ -111,6 +111,81 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Basement_Door Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: MinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.6000061
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].value
+      value: 0.7376938
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.016921997
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -1.0714285
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -1.0714285
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491788615370716996, guid: 33705cf9b5462dc4299072e1acccdc0c,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6169246608228185243, guid: 33705cf9b5462dc4299072e1acccdc0c, type: 3}
