@@ -23,6 +23,7 @@ public class BoogieMaryController : MonoBehaviour
     bool isWalking = false;
     bool reachedTarget = false;
     bool isTrippingTimerOn = false;
+    bool canAttack = true;
     public bool isSleepping = true;
 
     float agentOriginalSpeed = 0;
@@ -41,9 +42,6 @@ public class BoogieMaryController : MonoBehaviour
         {
             return;
         }
-
-        
-        
 
         if(!isTrippingTimerOn)
         {
@@ -77,7 +75,7 @@ public class BoogieMaryController : MonoBehaviour
         }
 
         isTrippingTimerOn = false;
-
+        canAttack = true;
     }
 
     // Update is called once per frame
@@ -129,8 +127,6 @@ public class BoogieMaryController : MonoBehaviour
             }
                 
         }
-
-        
     }
 
     private void MoveToTarget(Vector3 newtarget)
@@ -140,17 +136,17 @@ public class BoogieMaryController : MonoBehaviour
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            print("Perillä");
             reachedTarget = true;
             agent.isStopped = true;
-            //agent.speed = agentOriginalSpeed;
+            agent.speed = 0;
+            Attack();
         }
         else
         {
-            print("Ei perillä");
+
             if (agent.isStopped)
             {
-                //agent.speed = agentOriginalSpeed;
+                agent.speed = agentOriginalSpeed;
                 agent.isStopped = false;
             }
         }
@@ -159,7 +155,13 @@ public class BoogieMaryController : MonoBehaviour
 
     public void Attack()
     {
+        if(canAttack)
+        {
+            anime.SetTrigger("BoogieMaryAttack");
+            canAttack = false;
+        }
 
+        
     }
 
     public void AwakeMary()

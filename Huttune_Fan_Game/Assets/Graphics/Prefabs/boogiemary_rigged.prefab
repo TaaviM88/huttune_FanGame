@@ -143,7 +143,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.12
+  m_StoppingDistance: 1.3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -360,8 +360,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.000000014901161, y: -0.24604729, z: 0.033691823}
-    m_Extent: {x: 0.14342186, y: 0.3194411, z: 0.16309646}
+    m_Center: {x: 0, y: -0.24604729, z: 0.033691823}
+    m_Extent: {x: 0.14342183, y: 0.3194411, z: 0.16309643}
   m_DirtyAABB: 0
 --- !u!136 &289663987833664064
 CapsuleCollider:
