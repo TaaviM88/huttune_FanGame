@@ -925,7 +925,7 @@ MonoBehaviour:
   pushForce: 25
   mask:
     serializedVersion: 2
-    m_Bits: 7985
+    m_Bits: 40753
   throwObjPrefab: {fileID: 805520245}
 --- !u!1 &2738907660268413778
 GameObject:
