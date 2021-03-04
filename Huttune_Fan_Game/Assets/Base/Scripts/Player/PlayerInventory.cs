@@ -10,7 +10,19 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItem(ScriptableItem item)
     {
-        items.Add(item);
+        if(items.Count <= 0)
+        {
+            items.Add(item);
+        }
+        else
+        {
+            if(items.Contains(item))
+            {
+                return;
+            }
+
+            items.Add(item);
+        }
     }
 
     public void RemoveItem(ScriptableItem item)

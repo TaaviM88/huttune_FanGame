@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
+//[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class Item : MonoBehaviour
 {
     public ScriptableItem scriptableItem;
@@ -12,6 +12,7 @@ public class Item : MonoBehaviour
     bool isOutlineLayerOn = false;
     public float howLongOutlineLast = 2; 
     float cooldownTimer;
+
     private void Start()
     {
         originalLayer = gameObject.layer;
@@ -40,10 +41,15 @@ public class Item : MonoBehaviour
         //tutki esinettä
     }
 
-   public void PickUpItem()
+   public virtual ScriptableItem PickUpItem()
     {
         //print($"You got {scriptableItem.objName}");
         Journal.Instance?.Log($"You got {scriptableItem.objName}");
+        return scriptableItem;
+    }
+
+    public virtual void DestroyThisObj()
+    {
         Destroy(gameObject);
     }
 

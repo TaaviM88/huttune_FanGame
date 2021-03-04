@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 48925301736872991}
   - component: {fileID: 2830835641894234325}
   - component: {fileID: 4322563975205239774}
-  - component: {fileID: 3428273910709029506}
+  - component: {fileID: 85373261201814104}
   m_Layer: 0
   m_Name: Jacket1
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4186203, y: 0.70124066, z: 0.481305}
   m_Center: {x: -0.0040874635, y: 0.4587345, z: -0.12212592}
---- !u!114 &3428273910709029506
+--- !u!114 &85373261201814104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,8 +105,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4344243510047754496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd18404cb8861c44faa66169d61ddcd5, type: 3}
+  m_Script: {fileID: 11500000, guid: e6b64567b8b870b42b284ede016dd6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptableItem: {fileID: 11400000, guid: d7c09119754c1134fa9eda4b3c1a088b, type: 2}
+  scriptableItem: {fileID: 11400000, guid: 78bb4fc25ce1a9a4780444eec9123aa4, type: 2}
   howLongOutlineLast: 2
+  hasInfiniteAmount: 0
+  descriptionWhatToSayWhenItIsEmpty: 'You already got item here: '

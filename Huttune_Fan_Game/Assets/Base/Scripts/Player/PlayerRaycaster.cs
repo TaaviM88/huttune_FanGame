@@ -83,8 +83,15 @@ public class PlayerRaycaster : MonoBehaviour
             
             if (item != null)
             {
-                inventory.AddItem(item.scriptableItem);
-                item.PickUpItem();
+                ScriptableItem newItem = item.PickUpItem();
+
+                if(newItem != null)
+                {
+                    inventory.AddItem(newItem);
+                }
+                
+                item.DestroyThisObj();
+                //item.PickUpItem();
                 return;
             }
 
