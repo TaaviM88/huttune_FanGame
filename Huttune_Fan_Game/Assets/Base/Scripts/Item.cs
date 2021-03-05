@@ -7,9 +7,9 @@ using System.Collections.Generic;
 public class Item : MonoBehaviour
 {
     public ScriptableItem scriptableItem;
-    int outlineLayer = 15;
-    int originalLayer;
-    bool isOutlineLayerOn = false;
+    protected int outlineLayer = 15;
+     protected int originalLayer;
+    protected bool isOutlineLayerOn = false;
     public float howLongOutlineLast = 2; 
     float cooldownTimer;
 
