@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
         originalLayer = gameObject.layer;
     }
 
-    private void Update()
+    protected void Update()
     {
         if(isOutlineLayerOn)
         {

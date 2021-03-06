@@ -12,18 +12,14 @@ public class TakeItem : Item
     //bool isOutlineLayerOn = false;
     bool isItemTaken = false;
     //public float howLongOutlineLast = 2;
-    float cooldownTimer;
+    //float cooldownTimer;
     // Start is called before the first frame update
     //void Start()
     //{
     //    originalLayer = gameObject.layer;
     //}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     public override ScriptableItem PickUpItem()
     {
