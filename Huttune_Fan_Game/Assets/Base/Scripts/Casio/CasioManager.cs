@@ -1,27 +1,22 @@
-ï»¿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhoneManager : MonoBehaviour, ITogglePuzzle
+public class CasioManager : MonoBehaviour, ITogglePuzzle
 {
-    public Transform pointer;
     public List<Transform> buttons = new List<Transform>();
-    public WashingMachineManager wmManager;
     Animator anime;
-    bool answerOn = false;
-    public int selectedHightlightLayer = 15;
+    bool puzzleOn = false;
+    public int highlightLayer = 15;
     public List<int> correctSequence = new List<int>();
     public List<int> pressedSequence = new List<int>();
-    //public int[] correctSequence = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-    //public int[] pressedSequance;
-    bool isCalled = false;
+    bool isPlayed = false;
     bool canMoveNextButton = true;
     [SerializeField]
     int currentCursorIndex = 1;
     int originalCursorIndex;
     int pNumberIndex = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,29 +34,28 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
     // Update is called once per frame
     void Update()
     {
-        if(answerOn)
+        if (puzzleOn)
         {
-            //telephone number valinta systeemi
             float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
 
-            if(canMoveNextButton && horizontal != 0)
+
+            if (canMoveNextButton && horizontal != 0)
             {
                 ButtonHandler(horizontal);
                 canMoveNextButton = false;
             }
 
-            if(horizontal == 0)
+            if (horizontal == 0)
             {
                 canMoveNextButton = true;
             }
 
-            if(Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 PressButton();
             }
 
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 DisablePuzzle();
             }
@@ -70,44 +64,41 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
 
     private void PressButton()
     {
-       pressedSequence.Add(buttons[currentCursorIndex].GetComponent<PhoneButton>().GetNumber());
-        if(currentCursorIndex < 9)
-        {
-            anime.SetTrigger($"Button_{currentCursorIndex + 1}");
-        }
-       
-        if(currentCursorIndex == 9)
+        pressedSequence.Add(buttons[currentCursorIndex].GetComponent<PhoneButton>().GetNumber());
+
+        anime.SetTrigger($"{buttons[currentCursorIndex].GetComponent<PhoneButton>().cassioKey}");
+        
+
+ /*       if (currentCursorIndex == 9)
         {
             anime.SetTrigger($"Button_Star");
         }
 
-        if(currentCursorIndex == 10)
+        if (currentCursorIndex == 10)
         {
             anime.SetTrigger($"Button_{0}");
         }
 
-        if(currentCursorIndex == 11)
+        if (currentCursorIndex == 11)
         {
             anime.SetTrigger($"Button_Hash");
         }
+*/
 
-
-       CheckIfCorrectSequance();
+        CheckIfCorrectSequance();
     }
-
 
     private void CheckIfCorrectSequance()
     {
-        
         if (correctSequence.Count != pressedSequence.Count)
         {
             //Check if we have pressed correct number
 
-            if(correctSequence[pNumberIndex] != pressedSequence[pNumberIndex])
+            if (correctSequence[pNumberIndex] != pressedSequence[pNumberIndex])
             {
                 pressedSequence.Clear();
                 pNumberIndex = 0;
-                Journal.Instance.Log("Wrong number. Let's start over");
+                Journal.Instance.Log("I play it wrong, let's start over");
                 return;
             }
             else
@@ -119,14 +110,13 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
             {
 
                 pressedSequence.Clear();
-                Journal.Instance.Log("Wrong number. Let's start over");
+                Journal.Instance.Log("I play it wrong, let's start over");
                 return;
             }
             else
             {
                 return;
             }
-           
         }
 
         for (int i = 0; i < correctSequence.Count; i++)
@@ -134,82 +124,58 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
             if (correctSequence[i] != pressedSequence[i])
             {
                 pressedSequence.Clear();
-                print("VÃ¤Ã¤rÃ¤ numero. Aloitetaan alusta");
+                print("Väärä numero. Aloitetaan alusta");
                 return;
             }
         }
 
-        print("Oikea numero");
-        CallCorrectNumber();
+        Journal.Instance.Log("You played correct tune! Yeah!");
+        PlayerCorrectSequence();
     }
 
-    private void CallCorrectNumber()
+
+    private void PlayerCorrectSequence()
     {
-        //Play voice and sound
-        isCalled = true;
-        if(!wmManager.GetIsCalled())
-        {
-            wmManager.SetIsCalled(isCalled);
-        }
+        isPlayed = true;
+
+        //Do the next thing
     }
 
     private void ButtonHandler(float index)
     {
         buttons[currentCursorIndex].gameObject.layer = 0;
-
-        if (currentCursorIndex +index < buttons.Count && currentCursorIndex + index >= 0)
+        if (currentCursorIndex + index < buttons.Count && currentCursorIndex + index >= 0)
         {
             currentCursorIndex += (int)index;
-            MovePointer(buttons[currentCursorIndex].GetChild(0).localPosition);
-            buttons[currentCursorIndex].gameObject.layer = selectedHightlightLayer;
+           
+            buttons[currentCursorIndex].gameObject.layer = highlightLayer;
         }
         else
         {
-            if(currentCursorIndex + index < 0)
+            if (currentCursorIndex + index < 0)
             {
-                currentCursorIndex = buttons.Count -1;
-                MovePointer(buttons[currentCursorIndex].GetChild(0).localPosition);
-                buttons[currentCursorIndex].gameObject.layer = selectedHightlightLayer;
+                currentCursorIndex = buttons.Count - 1;
+             
+                buttons[currentCursorIndex].gameObject.layer = highlightLayer;
             }
             else
             {
                 currentCursorIndex = 0;
-                MovePointer(buttons[currentCursorIndex].GetChild(0).localPosition);
-                buttons[currentCursorIndex].gameObject.layer = selectedHightlightLayer;
+                buttons[currentCursorIndex].gameObject.layer = highlightLayer;
             }
-            
         }
-
-    }
-
-
-    private void MovePointer(Vector3 buttonTransform)
-    {
-        Vector3 newPosition = buttonTransform;
-        pointer.transform.localPosition = new Vector3(newPosition.x, newPosition.y, pointer.transform.localPosition.z);
-    }
-
-    public void TriggerAnimation(string trigger)
-    {
-        anime.SetTrigger(trigger);
-    }
-
-    public void BoolAnimation(bool b)
-    {
-        anime.SetBool("Answer_On",b);
     }
 
     public void DisablePuzzle()
     {
-        if (answerOn)
+        if(puzzleOn)
         {
-            BoolAnimation(false);
-            answerOn = false;
+            puzzleOn = false;
             buttons[currentCursorIndex].gameObject.layer = 0;
             pNumberIndex = 0;
             currentCursorIndex = originalCursorIndex;
 
-            for (int i = 0; i <pressedSequence.Count; i++)
+            for (int i = 0; i < pressedSequence.Count; i++)
             {
                 pressedSequence[i] = 0;
             }
@@ -220,16 +186,16 @@ public class PhoneManager : MonoBehaviour, ITogglePuzzle
 
     public void EnablePuzzle()
     {
-        if (!answerOn)
+        if (!puzzleOn)
         {
-            BoolAnimation(true);
-            answerOn = true;
-            buttons[currentCursorIndex].gameObject.layer = selectedHightlightLayer;
+           // BoolAnimation(true);
+            puzzleOn = true;
+            buttons[currentCursorIndex].gameObject.layer = highlightLayer;
         }
     }
 
     public bool IsPuzzleSolved()
     {
-        return isCalled;
+        return isPlayed;
     }
 }

@@ -10,6 +10,7 @@ public class Journal : MonoBehaviour
     public TMP_Text textbox;
     public float textCooldown = 3f;
     float countdown = 0;
+    Color orginalColor;
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,6 +24,9 @@ public class Journal : MonoBehaviour
         }
 
         countdown = textCooldown;
+
+        orginalColor = textbox.GetComponentInParent<Image>().color;
+        textbox.GetComponentInParent<Image>().color = Color.clear;
     }
 
     // Update is called once per frame
@@ -31,7 +35,12 @@ public class Journal : MonoBehaviour
         countdown -= Time.deltaTime;
         if(countdown <= 0f)
         {
-            textbox.text = "";
+            if(textbox.text != "")
+            {
+                textbox.text = "";
+                textbox.GetComponentInParent<Image>().color = Color.clear;
+            }
+            
         }
     }
 
@@ -39,5 +48,6 @@ public class Journal : MonoBehaviour
     {
         textbox.text = newLog;
         countdown = textCooldown;
+        textbox.GetComponentInParent<Image>().color = orginalColor;
     }
 }
