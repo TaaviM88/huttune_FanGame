@@ -6,7 +6,7 @@ using UnityEngine;
 public class CasioManager : MonoBehaviour, ITogglePuzzle
 {
     public List<Transform> buttons = new List<Transform>();
-    Animator anime;
+    Animator anime; 
     bool puzzleOn = false;
     public int highlightLayer = 15;
     public List<int> correctSequence = new List<int>();
