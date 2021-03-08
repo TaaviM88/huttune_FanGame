@@ -61,6 +61,11 @@ public class Item : MonoBehaviour
             return;
         }
 
+        foreach (Transform child in transform)
+        {
+            child.gameObject.layer = outlineLayer;
+        }
+
         gameObject.layer = outlineLayer;
         isOutlineLayerOn = true;
     }
@@ -70,8 +75,13 @@ public class Item : MonoBehaviour
         
         if(!isOutlineLayerOn)
         {
-            print("fukkk");
+           // print("fukkk");
             return;
+        }
+
+        foreach (Transform child in transform)
+        {
+            child.gameObject.layer = originalLayer;
         }
 
         gameObject.layer = originalLayer;
