@@ -108,5 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd18404cb8861c44faa66169d61ddcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptableItem: {fileID: 0}
+  scriptableItem: {fileID: 11400000, guid: 1600f955c74015642a2a39aa514994dd, type: 2}
   howLongOutlineLast: 2

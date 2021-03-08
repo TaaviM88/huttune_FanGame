@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4afa0eb7244877d4dad93fefdff25f49, type: 3}
-  m_Name: Pot
+  m_Name: CheeseSlice
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  objName: Pot
-  description: 
-  prefab: {fileID: 7231118834392977238, guid: c909a51a358548645a8c2fd9b6c2e2ad, type: 3}
+  objName: CheeseSlice
+  description: A Slice of Cheese
+  prefab: {fileID: 5178189822636479914, guid: a7cc2ed3dedbe7a47afc6abbf7acee64, type: 3}
   spawnRotation: {x: 0, y: 0, z: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
   useTimes: 1
