@@ -29,10 +29,10 @@ public class TakeItem : Item
         {
             if(!hasInfiniteAmount)
             {
-                Journal.Instance?.Log($"You got {scriptableItem.objName}");
+               // Journal.Instance?.Log($"You got {scriptableItem.objName}");
                 isItemTaken = true;
             }
-
+            Journal.Instance?.Log($"You got {scriptableItem.objName}");
             return scriptableItem;
         }else
         {
