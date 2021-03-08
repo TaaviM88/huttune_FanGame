@@ -75,7 +75,6 @@ public class Item : MonoBehaviour
         
         if(!isOutlineLayerOn)
         {
-           // print("fukkk");
             return;
         }
 
