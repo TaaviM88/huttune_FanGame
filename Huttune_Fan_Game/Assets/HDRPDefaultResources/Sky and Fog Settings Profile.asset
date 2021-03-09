@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5348343434294461542
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6b00fcf518bb94a90b408492e07b44, type: 3}
+  m_Name: FilmGrain
+  m_EditorClassIdentifier: 
+  active: 0
+  m_AdvancedMode: 0
+  type:
+    m_OverrideState: 1
+    m_Value: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.16
+    min: 0
+    max: 1
+  response:
+    m_OverrideState: 1
+    m_Value: 0.21
+    min: 0
+    max: 1
+  texture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
 --- !u!114 &-3678468707112407362
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -12,19 +42,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8bcdf71d7fafa419fca1ed162f5fc9, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -0.94
   contrast:
     m_OverrideState: 1
-    m_Value: 9
+    m_Value: -1
     min: -100
     max: 100
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.93934673, g: 0.9528302, b: 0.93934673, a: 1}
+    m_Value: {r: 0.5439658, g: 0.5678889, b: 0.6037736, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -35,7 +65,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
     min: -100
     max: 100
 --- !u!114 &-3305224281371206947
@@ -205,17 +235,17 @@ MonoBehaviour:
     m_Value: 3
   toeStrength:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.18
     min: 0
     max: 1
   toeLength:
     m_OverrideState: 1
-    m_Value: 0.32
+    m_Value: 0.37
     min: 0
     max: 1
   shoulderStrength:
     m_OverrideState: 1
-    m_Value: 0.41
+    m_Value: 0.48
     min: 0
     max: 1
   shoulderLength:
@@ -224,12 +254,12 @@ MonoBehaviour:
     min: 0
   shoulderAngle:
     m_OverrideState: 1
-    m_Value: 0.33
+    m_Value: 0.16
     min: 0
     max: 1
   gamma:
     m_OverrideState: 1
-    m_Value: 0.93
+    m_Value: 0.81
     min: 0.001
   lutTexture:
     m_OverrideState: 1
@@ -319,6 +349,8 @@ MonoBehaviour:
   - {fileID: -1890778296575516719}
   - {fileID: 367469195563320386}
   - {fileID: -2963600950913158500}
+  - {fileID: -5348343434294461542}
+  - {fileID: 7755095787994645715}
 --- !u!114 &367469195563320386
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -685,18 +717,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
     m_Value: 2
   threshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2.52
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.12
     min: 0
     max: 1
   scatter:
@@ -706,7 +738,7 @@ MonoBehaviour:
     max: 1
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.756141, g: 0.9056604, b: 0.8569279, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -1007,3 +1039,42 @@ MonoBehaviour:
   rectLightShadow:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &7755095787994645715
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b24b200358312b4fa1004e2431c2f1f, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  shadows:
+    m_OverrideState: 1
+    m_Value: {x: 0.8512927, y: 0.80095613, z: 1, w: 0.46132973}
+  midtones:
+    m_OverrideState: 1
+    m_Value: {x: 0.76197225, y: 0.92857516, z: 1, w: 0.24423337}
+  highlights:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0}
+  shadowsStart:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+  shadowsEnd:
+    m_OverrideState: 0
+    m_Value: 0.3
+    min: 0
+  highlightsStart:
+    m_OverrideState: 0
+    m_Value: 0.55
+    min: 0
+  highlightsEnd:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
