@@ -226,9 +226,9 @@ MonoBehaviour:
     colorBufferFormat: 74
     supportCustomPass: 1
     customBufferFormat: 12
-    supportedLitShaderMode: 3
+    supportedLitShaderMode: 2
     planarReflectionResolution:
-      m_Values: 000100000004000000040000
+      m_Values: 000100000001000000010000
       m_SchemaId:
         m_Id: With3Levels
     supportDecals: 1
@@ -254,16 +254,16 @@ MonoBehaviour:
       atlasResolution: 128
       atlasOctahedralDepthResolution: 2048
     lightLoopSettings:
-      cookieAtlasSize: 2048
+      cookieAtlasSize: 1024
       cookieFormat: 74
       cookieAtlasLastValidMip: 0
       cookieTexArraySize: 1
-      planarReflectionAtlasSize: 1024
+      planarReflectionAtlasSize: 256
       reflectionProbeCacheSize: 64
       reflectionCubemapSize: 256
       reflectionCacheCompressed: 0
       reflectionProbeFormat: 74
-      skyReflectionSize: 256
+      skyReflectionSize: 128
       skyLightingOverrideLayerMask:
         serializedVersion: 2
         m_Bits: 0
@@ -272,20 +272,20 @@ MonoBehaviour:
       maxPunctualLightsOnScreen: 512
       maxAreaLightsOnScreen: 64
       maxEnvLightsOnScreen: 64
-      maxDecalsOnScreen: 512
+      maxDecalsOnScreen: 16
       maxPlanarReflectionOnScreen: 16
       maxLightsPerClusterCell: 8
     hdShadowInitParams:
-      maxShadowRequests: 128
-      directionalShadowsDepthBits: 32
+      maxShadowRequests: 256
+      directionalShadowsDepthBits: 16
       shadowFilteringQuality: 1
       punctualLightShadowAtlas:
         shadowAtlasResolution: 4096
-        shadowAtlasDepthBits: 32
+        shadowAtlasDepthBits: 16
         useDynamicViewportRescale: 1
       areaLightShadowAtlas:
         shadowAtlasResolution: 4096
-        shadowAtlasDepthBits: 32
+        shadowAtlasDepthBits: 16
         useDynamicViewportRescale: 1
       cachedPunctualLightShadowAtlas: 2048
       cachedAreaLightShadowAtlas: 1024
@@ -301,16 +301,16 @@ MonoBehaviour:
         m_Values: 00010000000200000004000000080000
         m_SchemaId:
           m_Id: With4Levels
-      maxDirectionalShadowMapResolution: 2048
-      maxPunctualShadowMapResolution: 2048
-      maxAreaShadowMapResolution: 2048
+      maxDirectionalShadowMapResolution: 512
+      maxPunctualShadowMapResolution: 512
+      maxAreaShadowMapResolution: 512
       supportScreenSpaceShadows: 1
       maxScreenSpaceShadowSlots: 4
       screenSpaceShadowBufferFormat: 48
     decalSettings:
-      drawDistance: 1000
-      atlasWidth: 4096
-      atlasHeight: 4096
+      drawDistance: 20
+      atlasWidth: 1024
+      atlasHeight: 1024
       perChannelMask: 0
     postProcessSettings:
       m_LutSize: 16
