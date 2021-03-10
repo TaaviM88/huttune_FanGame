@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3071884121752571380}
   - component: {fileID: 2093713956160307793}
   - component: {fileID: 4245393107897972379}
+  - component: {fileID: -2887380108911659029}
   m_Layer: 0
   m_Name: Coat_Hanger_Stand
   m_TagString: Untagged
@@ -55,6 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,3 +81,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-2887380108911659029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2443861378848118606}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.40427634, y: 1.8578814, z: 0.40427652}
+  m_Center: {x: 0, y: 0.9289407, z: 0}
