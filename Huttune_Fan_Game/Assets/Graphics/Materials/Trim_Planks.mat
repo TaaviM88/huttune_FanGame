@@ -31,8 +31,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
         m_Texture: {fileID: 2800000, guid: e84fa65d35ffe9448b241408afc73e0a, type: 3}
-        m_Scale: {x: 0.5, y: 0.5}
-        m_Offset: {x: 0.29, y: 0.48}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: -0.23, y: 0.48}
     - _BaseColorMap0:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -526,7 +526,7 @@ Material:
     - _InheritBaseNormal1: 0
     - _InheritBaseNormal2: 0
     - _InheritBaseNormal3: 0
-    - _InvTilingScale: 2
+    - _InvTilingScale: 0.5
     - _InvTilingScale0: 1
     - _InvTilingScale1: 1
     - _InvTilingScale2: 1
