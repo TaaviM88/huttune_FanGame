@@ -12,6 +12,7 @@ public class BoogieMaryController : MonoBehaviour
     public Transform playerLocation;
     public float doorOpenRange = 1;
     public float TripOverCooldown = 5;
+    public float raycastCooldown = 0.25f;
     Transform lastknowLocation;
     Transform cheeseLocation;
     Vector3 target;
@@ -24,14 +25,17 @@ public class BoogieMaryController : MonoBehaviour
     bool reachedTarget = false;
     bool isTrippingTimerOn = false;
     bool canAttack = true;
+    bool canDoRaycast = true;
     public bool isSleepping = true;
 
     float agentOriginalSpeed = 0;
+    float cooldownTimer;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agentOriginalSpeed = agent.speed;
+        cooldownTimer = raycastCooldown;
     }
 
     public void Update()
@@ -85,8 +89,17 @@ public class BoogieMaryController : MonoBehaviour
         {
             return;
         }
-
-        ProcessRaycast();
+        if (canDoRaycast)
+        {
+            cooldownTimer -= Time.deltaTime;
+            if(cooldownTimer < 0)
+            {
+                ProcessRaycast();
+                cooldownTimer = raycastCooldown;
+            }
+            
+        }
+        
 
         switch (moveState)
         {
