@@ -7,13 +7,13 @@ public class CombineWheelRotation : MonoBehaviour
     public int id = 0;
     public static event Action<string, int> Rotated = delegate { };
     private bool coroutineAllowed;
-    private int numberShown;
+    public int numberShown = 1;
     private int direction = 0;
     // Start is called before the first frame update
     void Start()
     {
         coroutineAllowed = true;
-        numberShown = 1;
+        //numberShown = 1;
     }
 
     public void RotateWheelDirection(int dir)
