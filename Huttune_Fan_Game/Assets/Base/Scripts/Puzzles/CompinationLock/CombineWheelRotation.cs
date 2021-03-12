@@ -45,7 +45,7 @@ public class CombineWheelRotation : MonoBehaviour
             {
                 transform.Rotate(-1, 0, 0);
                
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.05f);
             }
         }
         else
@@ -54,7 +54,7 @@ public class CombineWheelRotation : MonoBehaviour
             {
                 transform.Rotate(+1, 0, 0);
 
-                yield return new WaitForSeconds(0.01f);
+                yield return new WaitForSeconds(0.05f);
             }
         }
 
