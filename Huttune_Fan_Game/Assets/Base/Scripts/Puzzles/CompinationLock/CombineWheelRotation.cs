@@ -8,6 +8,8 @@ public class CombineWheelRotation : MonoBehaviour
     public static event Action<string, int> Rotated = delegate { };
     private bool coroutineAllowed;
     public int numberShown = 1;
+    public AudioSource parentAudiosource;
+    public AudioClip soundFX;
     private int direction = 0;
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,7 @@ public class CombineWheelRotation : MonoBehaviour
             for (int i = 0; i < 36; i++)
             {
                 transform.Rotate(-1, 0, 0);
+                parentAudiosource.PlayOneShot(soundFX);
                 yield return new WaitForSeconds(0.01f);
             }
         }
@@ -50,6 +53,7 @@ public class CombineWheelRotation : MonoBehaviour
             for (int i = 0; i < 36; i++)
             {
                 transform.Rotate(+1, 0, 0);
+                parentAudiosource.PlayOneShot(soundFX);
                 yield return new WaitForSeconds(0.01f);
             }
         }

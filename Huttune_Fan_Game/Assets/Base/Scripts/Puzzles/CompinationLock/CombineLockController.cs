@@ -13,6 +13,8 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
     private int[] results;
     public int[] correctCombination;
     public PuzzleController puzzleController;
+    public AudioSource audiosource;
+    public AudioClip openSoundFX;
     public bool isSolved {  get; private set; }
     public bool openLock { get; private set;}
 
@@ -150,13 +152,14 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
                 break;
         }
         if(results[0] == correctCombination[0] && results[1] == correctCombination[1] && results[2] == correctCombination[2])
-        { 
-            Debug.Log("Auki");
+        {
+            Journal.Instance.Log("Door is open");
+            audiosource.PlayOneShot(openSoundFX);
             isSolved = true;
             openLock = true;
             CheckIfPuzzleIsSolve(id, openLock);
             puzzleController.PuzzleIsSolved(true);
-            Destroy(gameObject);
+            Destroy(puzzleController.gameObject,0.2f);
         }
         else
         {
@@ -175,6 +178,7 @@ public class CombineLockController : MonoBehaviour, ITogglePuzzle
         
         foreach (Transform child in transform)
         {
+            child.gameObject.layer = 0;
             child.GetComponent<CombineWheelRotation>().enabled = false;
         }
 
