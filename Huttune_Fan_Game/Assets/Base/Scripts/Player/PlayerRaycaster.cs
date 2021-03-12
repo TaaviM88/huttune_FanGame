@@ -63,11 +63,13 @@ public class PlayerRaycaster : MonoBehaviour
     {
         RaycastHit hit;
 
-       if ( Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range, 15))
+       if ( Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range))
         {
             itemOutline = hit.collider.gameObject.GetComponent<Item>();
 
             itemOutline?.SetOutlineLayerOn();
+
+
         }
 
     }

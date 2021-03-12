@@ -8,9 +8,9 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
     public bool isLocked = false;
     public DoorState doorState = DoorState.Close;
     public DoorLockType lockType = DoorLockType.None;
-    public string description = "";
+    //public string description = "";
     public string hintIfDoorIsLocked = "";
-    public Item requiredItemToOpen;
+    public ScriptableItem requiredItemToOpen;
     public int id = 0;
     AudioSource audioSource;
     public AudioClip audioHandleClank;
@@ -141,7 +141,7 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
         {
             if (isLocked)
             {
-                if (requiredItemToOpen.scriptableItem.objName == usedItem.scriptableItem.objName)
+                if (requiredItemToOpen.objName == usedItem.scriptableItem.objName)
                 {
                     isLocked = false;
                     doorState = DoorState.Close;
@@ -184,8 +184,9 @@ public class DoorScript : MonoBehaviour, ITryUseItem<Item>, IInteractable
                 
                 break;
             case DoorState.Locked:
-                
-                print($"{hintIfDoorIsLocked}");
+
+                Journal.Instance.Log(hintIfDoorIsLocked);
+                //print($"{hintIfDoorIsLocked}");
 
                 break;
             case DoorState.Moving:
