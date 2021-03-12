@@ -44,7 +44,7 @@ public class CombineWheelRotation : MonoBehaviour
             for (int i = 0; i < 36; i++)
             {
                 transform.Rotate(-1, 0, 0);
-                parentAudiosource.PlayOneShot(soundFX);
+               
                 yield return new WaitForSeconds(0.01f);
             }
         }
@@ -53,12 +53,12 @@ public class CombineWheelRotation : MonoBehaviour
             for (int i = 0; i < 36; i++)
             {
                 transform.Rotate(+1, 0, 0);
-                parentAudiosource.PlayOneShot(soundFX);
+
                 yield return new WaitForSeconds(0.01f);
             }
         }
 
-
+        parentAudiosource.PlayOneShot(soundFX);
         coroutineAllowed = true;
 
          if (direction > 0)
