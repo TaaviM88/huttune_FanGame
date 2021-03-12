@@ -38,7 +38,8 @@ public class PlayerPuzzleManager : MonoBehaviour
         puzzControl = puzzyControl;
         manager.canMove = false;
         manager.canLookAround = false;
-        Cursor.lockState = CursorLockMode.None;
+        manager.ChangeCameraFOVPuzzleFOV();
+        //Cursor.lockState = CursorLockMode.None;
     }
 
     private void ExitPuzzleMode()
@@ -48,6 +49,7 @@ public class PlayerPuzzleManager : MonoBehaviour
         manager.canMove = true;
         manager.canLookAround = true;
         puzzControl = null;
-        Cursor.lockState = CursorLockMode.Locked;       
+        manager.ChangeCameraFOVBack();
+        //Cursor.lockState = CursorLockMode.Locked;       
     }
 }
