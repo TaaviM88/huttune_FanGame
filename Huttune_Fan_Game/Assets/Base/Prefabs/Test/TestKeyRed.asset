@@ -18,3 +18,5 @@ MonoBehaviour:
   prefab: {fileID: 4469208641234534857, guid: 75edcc618c6944d419822b12293bf03b, type: 3}
   spawnRotation: {x: 0, y: 180, z: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
+  useTimes: 1
+  infiniteUse: 1
