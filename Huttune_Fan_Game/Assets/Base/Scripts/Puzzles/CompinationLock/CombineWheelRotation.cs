@@ -38,7 +38,7 @@ public class CombineWheelRotation : MonoBehaviour
     private IEnumerator RotateWheel()
     {
         coroutineAllowed = false;
-        parentAudiosource.PlayOneShot(soundFX);
+        parentAudiosource.PlayOneShot(soundFX); 
         if (direction > 0)
         {
             for (int i = 0; i < 36; i++)
@@ -63,11 +63,11 @@ public class CombineWheelRotation : MonoBehaviour
 
          if (direction > 0)
         {
-            numberShown += 1;
+            numberShown -= 1;
         }
           else
         {
-            numberShown -= 1;
+            numberShown += 1;
         }
 
         if(numberShown > 9)
